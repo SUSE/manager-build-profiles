@@ -1,0 +1,31 @@
+## Path:        Desktop/Display manager
+## Description: settings to generate a proper displaymanager config
+## Type:        string(kdm,xdm,gdm,wdm,console)
+## Default:     ""
+## Config:      xdm,kdm,gdm
+#
+# Here you can set the default Display manager (kdm/xdm/gdm/wdm/console).
+# all changes in this file require a restart of the displaymanager
+#
+DISPLAYMANAGER="gdm"
+
+## Type:        yesno
+## Default:     no
+#
+# Allow remote access to your display manager (kdm only for now)
+#
+DISPLAYMANAGER_REMOTE_ACCESS="no"
+
+## Type:        yesno
+## Default:     no
+#
+# Allow remote access of the user root to your display manager
+#
+DISPLAYMANAGER_ROOT_LOGIN_REMOTE="no"
+
+## Type:        yesno
+## Default:     no
+#
+# Allow all users to login without password, but ask for the user
+#
+DISPLAYMANAGER_PASSWORD_LESS_LOGIN="no"
