@@ -8,4 +8,4 @@ When using this repository as a source, do not forget to add valid sub directory
 * POS_Image-JeOS6 -> https://github.com/SUSE/manager-build-profiles#master:OSImage/POS_Image-JeOS6
 * POS_Image-Graphical6 -> https://github.com/SUSE/manager-build-profiles#master:OSImage/POS_Image-Graphical6
 
-> POS prefixed image templates are mirrored from internal build sources. For changes, please use offical [SUSE bugzilla](https://http://bugzilla.suse.com)
+> POS prefixed image templates are mirrored from internal build sources. For changes, please use offical [SUSE bugzilla](https://bugzilla.suse.com)
