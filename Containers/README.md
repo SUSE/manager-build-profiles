@@ -2,7 +2,7 @@
 
 This directory contains build profiles for Dockerfile image build system and can be used in SUSE Manager image profile as Container Image build type.
 
-When using this repository as a source, do not forget to add valid sub directory name to the URL:
+When using this repository as a source, do not forget to add a valid sub directory name to the URL. Example:
 
 * apache -> https://github.com/SUSE/manager-build-profiles#master:Containers/apache
 
