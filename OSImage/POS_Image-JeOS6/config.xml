@@ -22,6 +22,15 @@
         <type boot="isoboot/suse-SLES12" image="iso"></type>
         <type boot="oemboot/suse-SLES12" filesystem="ext3" image="oem" installiso="true"></type>
     </preferences>
+    <repository type="rpm-md" >
+        <source path='http://euklid.nue.suse.com/mirror/SuSE/build.suse.de/SUSE/Products/SLE-SERVER/12-SP3/x86_64/product/'/>
+    </repository>
+    <repository type="rpm-md" >
+        <source path='http://euklid.nue.suse.com/mirror/SuSE/build.suse.de/SUSE/Updates/SLE-SERVER/12-SP3/x86_64/update/'/>
+    </repository>
+    <repository type="rpm-md" >
+        <source path='http://dist.nue.suse.com/ibs/Devel:/Galaxy:/Manager:/Head:/SLE12-SUSE-Manager-Tools/images/repo/SLE-12-Manager-Tools-POOL-x86_64-Media1/'/>
+    </repository>
     <!--    CUSTOM REPOSITORY -->
     <repository type="rpm-dir">
       <source path="this://repo"/>
