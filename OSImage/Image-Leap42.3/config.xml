@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="6.1" name="Image_Leap42.3">
+    <description type="system">
+        <author>Admin user</author>
+        <contact>noemail@example.com</contact>
+        <specification>openSUSE Leap 42.3</specification>
+    </description>
+
+    <preferences>
+        <version>1.0.0</version>
+        <packagemanager>zypper</packagemanager>
+        <rpm-check-signatures>false</rpm-check-signatures>
+
+        <locale>en_US</locale>
+        <keytable>us.map.gz</keytable>
+        <hwclock>utc</hwclock>
+
+        <rpm-excludedocs>true</rpm-excludedocs>
+        <!-- TODO: re-enable this
+             disabled because saltboot requires sles-release package which is absent on openSUSE
+         type boot="saltboot/suse-SLES12" bootloader="grub2" checkprebuilt="true" compressed="false" filesystem="ext3" fsmountoptions="acl" fsnocheck="true" image="pxe" kernelcmdline="quiet"></type -->
+        <!--type boot="isoboot/suse-SLES12" image="iso"></type-->
+        <type boot="oemboot/suse-SLES12" filesystem="ext3" image="oem" installiso="true"></type>
+    </preferences>
+
+    <users group="root">
+        <user home="/root" name="root"/>
+    </users>
+
+    <packages type="image">
+        <package name="ca-certificates"/>
+        <package name="grub2"/>
+        <package name="grub2-x86_64-efi"/>
+    </packages>
+
+    <packages type='bootstrap'>
+        <package name='filesystem'/>
+        <package name='glibc-locale'/>
+        <package name='module-init-tools'/>
+        <package name='openSUSE-release'/>
+    </packages>
+
+    <repository type='rpm-md'>
+        <source path='obs://openSUSE:Leap:42.3/standard'/>
+    </repository>
+    <repository type='rpm-md'>
+        <source path='obs://openSUSE:Leap:42.3:Update/standard'/>
+    </repository>
+
+    <!--repository type='rpm-md'>
+        <source path='obsrepositories:/'/>
+    </repository-->
+
+</image>
