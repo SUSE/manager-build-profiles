@@ -13,6 +13,8 @@ When using this repository as a source, do not forget to add a valid sub directo
 
 POS prefixed image templates are unsupported at this moment due to lack of availability of required package `kiwi-desc-saltboot`.
 
+Testsuite templates are intended for the SUSE Manager testsuite and will not be supported at any moment.
+
 ### Image deployment
 
 POS templates are meant to be deployed using Saltboot mechanism which is part of SUSE Manager for Retail. They are not meant to be deployed directly to the harddrive.
