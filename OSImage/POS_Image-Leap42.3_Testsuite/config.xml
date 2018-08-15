@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<image schemaversion="6.5" name="POS_Image_Leap42.3">
+
+  <description type="system">
+    <author>Adrian Schroeter</author>
+    <contact>adrian@suse.de</contact>
+    <specification>Minimal container example</specification>
+  </description>
+
+  <preferences>
+    <type image="docker" derived_from="obsrepositories:/opensuse#42.3">
+      <containerconfig
+        name="my_container"
+        tag="latest" />
+    </type>
+    <version>1.0.0</version>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <rpm-excludedocs>true</rpm-excludedocs>
+    <locale>en_US</locale>
+    <keytable>us.map.gz</keytable>
+    <hwclock>utc</hwclock>
+  </preferences>
+
+  <users>
+    <user home="/root" name="root" groups="root"/>
+  </users>
+
+  <packages type="image">
+    <package name="ca-certificates"/>
+  </packages>
+
+  <packages type='bootstrap'>
+    <package name='filesystem'/>
+    <package name='glibc-locale'/>
+    <package name='module-init-tools'/>
+    <package name='openSUSE-release'/>
+  </packages>
+
+<!-- possible additional repositories
+  <repository type='rpm-md'>
+    <source path='obs://openSUSE:Tools/openSUSE_Leap_42.3'/>
+  </repository>
+-->  
+
+  <repository type='rpm-md'>
+    <source path='obsrepositories:/'/>
+  </repository>
+
+</image>
