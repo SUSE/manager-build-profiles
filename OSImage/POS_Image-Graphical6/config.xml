@@ -89,7 +89,6 @@
         <package name="wpa_supplicant"/>
 
         <!-- packages specific for Graphical image -->
-
         <package name="patterns-sle-gnome-basic"/>
         <package name="patterns-sles-x11"/>
         <package name="xorg-x11-server"/>
