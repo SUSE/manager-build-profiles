@@ -87,6 +87,7 @@
         <package name="kexec-tools"/>
         <package name="plymouth"/>
         <package name="wpa_supplicant"/>
+        <package name="busybox"/>               <!-- this is needed if tftp is used for background image downloading -->
 
         <!-- packages specific for Graphical image -->
         <package name="patterns-sle-gnome-basic"/>
