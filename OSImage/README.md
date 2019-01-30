@@ -9,15 +9,11 @@ When using this repository as a source, do not forget to add a valid sub directo
 
 ## POS templates
 
-### Disclaimer
-
-POS prefixed image templates are unsupported at this moment due to lack of availability of required package `kiwi-desc-saltboot`.
-
 ### Image deployment
 
 POS templates are meant to be deployed using Saltboot mechanism which is part of SUSE Manager for Retail. They are not meant to be deployed directly to the harddrive.
 
 ### Requests changes, bug reports
-> POS prefixed image templates are mirrored from internal build sources. For change requests or bug reports please use official [SUSE bugzilla](https://bugzilla.suse.com)
 
+POS prefixed image templates are mirrored from internal build sources. For change requests or bug reports please use official [SUSE bugzilla](https://bugzilla.suse.com)
 
