@@ -1,7 +1,7 @@
-# VERSION               1.0.0
-
-FROM opensuse:42.3
-MAINTAINER Michele Bologna <michele.bologna@suse.com>
+FROM registry.suse.com/suse/sles12sp4:latest
+LABEL maintainer="Michele Bologna <michele.bologna@suse.com>"
+LABEL name="SUSE Manager apache build profile"
+LABEL version="2.0.0-20190513"
 
 ARG repo
 ARG cert
