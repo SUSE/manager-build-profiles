@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="5.8" name="POS_Image_Graphical6_SLE11">
+	<description type="system">
+		<author>Admin User</author>
+		<contact>noemail@example.com</contact>
+		<specification>SUSE Linux Enterprise 11 SP4 minimal GNOME system</specification>
+	</description>
+	<preferences>
+		<type image="pxe" boot="saltboot/suse-SLES11" filesystem="ext3">
+			<size unit="M" additive="true">0</size>
+		</type>
+		<version>6.0.0</version>
+		<keytable>us.map.gz</keytable>
+		<locale>en_US</locale>
+		<packagemanager>zypper</packagemanager>
+		<rpm-check-signatures>false</rpm-check-signatures>
+		<rpm-excludedocs>true</rpm-excludedocs>
+		<timezone>America/New_York</timezone>
+		<hwclock>utc</hwclock>
+		<bootsplash-theme>SLEPOS</bootsplash-theme>
+		<bootloader-theme>SLEPOS</bootloader-theme>
+	</preferences>
+<!-- password: "linux"
+	<users group="root">
+		<user password="$1$X4nzuRfs$Cw2KXDXsgUUNpasZZi7I/1" name="root" home="/root" shell="/bin/bash"/>
+	</users>
+-->
+	<repository type="rpm-dir">
+		<source path="this://repo"/>
+	</repository>
+
+<!--    PACKAGES -->
+	<packages type="image" patternType="plusRecommended">
+		<package name="aaa_base"/>
+		<package name="bash"/>
+		<package name="coreutils"/>
+		<package name="device-mapper"/>
+		<package name="e2fsprogs"/>
+		<package name="filesystem"/>
+		<package name="glibc"/>
+		<package name="insserv"/>
+		<package name="kbd"/>
+		<package name="login"/>
+		<package name="mkinitrd"/>
+		<package name="module-init-tools"/>
+		<package name="pam"/>
+		<package name="pam-modules"/>
+		<package name="procps"/>
+		<package name="pwdutils"/>
+		<package name="rpm"/>
+		<package name="sles-release"/>
+		<package name="sysconfig"/>
+		<package name="sysvinit"/>
+		<package name="zypper"/>
+		<!-- xdm is included -->
+		<package name="xorg-x11"/>
+		<package name="xorg-x11-server"/>
+		<package name="xorg-x11-driver-video"/>
+		<package name="fonts-config"/>
+		<package name="alsa"/>
+		<package name="alsa-utils"/>
+		<package name="insserv"/>
+		<package name="acpid"/>
+		<package name="suspend"/>
+		<package name="gnome-power-manager"/>
+		<package name="sax2"/>
+		<package name="ifplugd"/>
+		<package name="MozillaFirefox"/>
+		<package name="krb5"/>
+		<package name="openssh"/>
+
+		<!-- GNOME -->
+		<package name="gdm"/>
+		<package name="kbd"/>
+		<!-- bug in requirements, gnome-panel-nld needs timezone -->
+		<package name="timezone"/>
+		<package name="gnome-applets"/>
+		<package name="gnome-main-menu"/>
+		<package name="gnome-session"/>
+		<package name="gnome-mount"/>
+		<package name="procps"/>
+		<package name="net-tools"/>
+		<package name="busybox"/>
+		<package name="usbutils"/>
+		<package name="eject"/>
+		<package name="mkinitrd"/>
+		<package name="grub"/>
+		<package name="input-utils"/>
+		<package name="klogd"/>
+		<package name="salt-minion"/>
+	</packages>
+	<packages type="bootstrap">
+		<package name="filesystem"/>
+		<package name="glibc-locale"/>
+		<package name="kernel-default"/>
+		<package name="udev"/>
+		<package name="openssl-certs"/>
+		<package name="rhn-org-trusted-ssl-cert-osimage-sle11" bootinclude="true"/>
+	</packages>
+</image>
