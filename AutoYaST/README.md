@@ -9,7 +9,9 @@ Check which variables each script use before using it.
 When the uploaded profile requires variables to be set, navigate to `Systems > Autoinstallation > Profiles`, select the profile to edit, and navigate to the `Variables` tab.
 Specify the required variables, using this format:
 
-  <key>=<value>
+```
+<key>=<value>
+```
 
 For all installations, the `$redhat_management_server` variable will be set automatically and does not need to be defined.
 
@@ -18,7 +20,9 @@ Set the variable to the same value that you selected in `Autoinstall Tree` in th
 
 Example:
 
-  distrotree=sles_sap15sp2-x86_64
+```
+distrotree=sles_sap15sp2-x86_64
+```
 
 when the distribution label is `sles_sap15sp2-x86_64`.
 
