@@ -22,4 +22,4 @@ Example:
 
 when the distribution label is `sles_sap15sp2-x86_64`.
 
-For changes, please use official [SUSE bugzilla](https://bugzilla.suse.com)
+To report a bug or request a change, please use [Bugzilla](https://bugzilla.suse.com) or open a GitHub issue.

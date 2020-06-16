@@ -27,5 +27,6 @@ SLE15 POS images are meant to be deployed using dracuct-saltboot Saltboot mechan
 
 ## Requests changes, bug reports
 
-POS prefixed image templates are mirrored from internal build sources. For change requests or bug reports please use official [SUSE bugzilla](https://bugzilla.suse.com)
+POS prefixed image templates are mirrored from internal build sources.
 
+To report a bug or request a change, please use [Bugzilla](https://bugzilla.suse.com) or open a GitHub issue.

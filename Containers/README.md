@@ -6,4 +6,6 @@ When using this repository as a source, do not forget to add a valid sub directo
 
 * apache -> https://github.com/SUSE/manager-build-profiles.git#master:Containers/apache
 
-> apache image templates is based on opensuse base image. For changes, please use official [SUSE bugzilla](https://bugzilla.suse.com)
+> apache image templates is based on opensuse base image.
+
+To report a bug or request a change, please use [Bugzilla](https://bugzilla.suse.com) or open a GitHub issue.
