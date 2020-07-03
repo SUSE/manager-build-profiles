@@ -38,6 +38,20 @@
         <product>Basesystem Module</product>
         <product_dir>/</product_dir>
       </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp2-pool-x86_64/$distrotree</media_url>
+        <name>SLE-Module-Server-Applications15-SP2-Pool for x86_64</name>
+        <product>Server Applications Module 15 SP2 x86_64</product>
+        <product_dir>/</product_dir>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp2-updates-x86_64/$distrotree</media_url>
+        <name>SLE-Module-Server-Applications15-SP2-Updates for x86_64</name>
+        <product>Server Applications Module 15 SP2 x86_64</product>
+        <product_dir>/</product_dir>
+      </listentry>
      </add_on_products>
   </add-on>
   <general>
