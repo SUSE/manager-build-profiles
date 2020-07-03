@@ -1,5 +1,8 @@
-Use this script as a base for a SLES15 SP2 installation.
+Use these scripts as a base for a SLE15 SP2 installations.
 The system register at SUSE Manager using salt.
+
+- sles15-sp2-autoyast.xml
+- sle_sap15-sp2-autoyast.xml
 
 For using an activation key, specify the following valiable
 
