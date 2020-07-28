@@ -21,7 +21,7 @@ LOADER_TYPE="grub2"
 # take effect on any other firmware type.
 #
 #
-SECURE_BOOT="no"
+SECURE_BOOT="yes"
 
 ## Path:	System/Bootloader
 ## Description:	Bootloader configuration
