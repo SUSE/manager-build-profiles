@@ -67,10 +67,6 @@
     <modified config:type="boolean">true</modified>
     <remove_old config:type="boolean">false</remove_old>
   </backup>
-  <networking>
-    <keep_install_network config:type="boolean">true</keep_install_network>
-    <start_immediately config:type="boolean">true</start_immediately>
-  </networking>
   <software>
     <image/>
     <install_recommended config:type="boolean">true</install_recommended>
