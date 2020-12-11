@@ -7,6 +7,9 @@
         <specification>SUSE Linux Enterprise 15 SP2 Graphical Image</specification>
     </description>
     <preferences>
+	<users group="root">
+          <user password="STYzCYmQOaXeA" home="/root" name="root" shell="/bin/bash"/>
+	</users>
         <version>7.0.0</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
