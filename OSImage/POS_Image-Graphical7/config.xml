@@ -7,7 +7,7 @@
         <specification>SUSE Linux Enterprise 15 SP2 Graphical Image</specification>
     </description>
     <preferences>
-	<version>7.0.5</version>
+	<version>7.0.6</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
@@ -20,9 +20,16 @@
         <rpm-excludedocs>true</rpm-excludedocs>
         <type filesystem="ext3" image="pxe" initrd_system="dracut"></type>
     </preferences>
-    <users group="root">
-          <user password="STYzCYmQOaXeA" home="/root" name="root" shell="/bin/bash"/>
-    </users>
+      <users>
+        <user
+            password="$1$xyz$dCB0XV.AZGZOsJNJwnQVi0"
+            home="/home/guest" name="guest" groups="users"
+        />
+        <user
+            password="$1$xyz$..z0J0HuUZ73rVznp2H.s/"
+            home="/root" name="root" groups="root"
+        />
+      </users>
     <packages type="image">
         <package name="patterns-base-minimal_base"/>
         <package name="aaa_base-extras"/> <!-- wouldn't be SUSE without that ;-) -->
