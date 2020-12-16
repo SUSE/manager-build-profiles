@@ -70,7 +70,16 @@
     <modified config:type="boolean">true</modified>
     <remove_old config:type="boolean">false</remove_old>
   </backup>
-   <scripts>
+  <software>
+    <image/>
+    <install_recommended config:type="boolean">true</install_recommended>
+    <instsource/>
+    <patterns/>
+    <products config:type="list">
+      <listentry>SLES</listentry>
+    </products>
+  </software>
+  <scripts>
     <init-scripts config:type="list">
       $SNIPPET('spacewalk/minion_script')
 <!-- when client is traditional registered, please use this snippet
