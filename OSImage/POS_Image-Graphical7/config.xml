@@ -108,7 +108,9 @@
         <package name="alsa"/>
         <package name="pulseaudio"/>
         <package name="MozillaFirefox"/>
+	<package name="google-chrome-stable"/>
         <package name="nautilus"/>
+    	<package name="gnome-terminal"/>
 
         <!-- Themes and branding -->
         <package name="gnome-icon-theme"/>
