@@ -55,7 +55,7 @@
         <package name="iproute2"/> 
         <package name="openssh"/>
         <package name="rsync"/>
-	<package name="java-1_8_0-ibm-1.8.0_sr6"/>
+	<package name="java-1_8_0-ibm"/>
 
         <!-- Only for btrfs
         <package name="btrfsprogs"/>
