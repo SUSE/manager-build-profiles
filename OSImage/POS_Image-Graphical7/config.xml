@@ -55,6 +55,7 @@
         <package name="iproute2"/> 
         <package name="openssh"/>
         <package name="rsync"/>
+	<package name="java-1_8_0-ibm-1.8.0_sr6"/>
 
         <!-- Only for btrfs
         <package name="btrfsprogs"/>
@@ -136,7 +137,6 @@
         <package name="ca-certificates-mozilla"/>
         <package name="sles-release"/>
         <package name="rhn-org-trusted-ssl-cert-osimage"/>
-	<package name="java-1_8_0-ibm-1.8.0_sr6"/>
     </packages>
 <!--  No packages to delete -->
 </image>
