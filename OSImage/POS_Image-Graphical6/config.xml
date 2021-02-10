@@ -33,7 +33,7 @@
     <users>
         <user
             password="$1$xyz$YACkVSgLQHtAXVTV.wIyR/"
-            home="/home/geeko" name="geeko" groups="users"
+            home="/home/geeko" name="geeko" groups="root"
         />
         <user
             password="$1$xyz$..z0J0HuUZ73rVznp2H.s/"
