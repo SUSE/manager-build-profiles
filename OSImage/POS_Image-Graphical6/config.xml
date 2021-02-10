@@ -30,16 +30,12 @@
         <source path='obsrepositories:/'/>
     </repository>
     -->
-    <users>
-        <user
-            password="$1$xyz$YACkVSgLQHtAXVTV.wIyR/"
-            home="/home/geeko" name="geeko" groups="root"
-        />
-        <user
-            password="$1$xyz$..z0J0HuUZ73rVznp2H.s/"
-            home="/root" name="root" groups="root"
-        />
-      </users>
+    <users group="root">
+      <user password="$1$xyz$..z0J0HuUZ73rVznp2H.s/" home="/root" name="root" shell="/bin/bash"/>
+    </users>
+    <users group="geeko">
+        <user password="$1$xyz$YACkVSgLQHtAXVTV.wIyR/" home="/home/geeko" name="geeko" shell="/bin/bash"/>
+    </users>
     <packages type="image">
         <package name="patterns-sles-Minimal"/>
         <package name="aaa_base-extras"/> <!-- wouldn't be SUSE without that ;-) -->
