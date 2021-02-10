@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<image schemaversion="6.1" name="POS_Image_Graphical6">
+<image schemaversion="6.1" name="bps_POS_Image_Graphical6">
     <description type="system">
-        <author>Admin User</author>
-        <contact>noemail@example.com</contact>
+        <author>dvosburg</author>
+        <contact>dvosburg@suse.com</contact>
         <specification>SUSE Linux Enterprise 12 SP3 JeOS</specification>
     </description>
     <preferences>
-        <version>6.0.0</version>
+        <version>6.0.1</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
 
         <locale>en_US</locale>
         <keytable>us.map.gz</keytable>
-        <timezone>Europe/Berlin</timezone>
+        <timezone>America/Chicago</timezone>
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
@@ -30,6 +30,16 @@
         <source path='obsrepositories:/'/>
     </repository>
     -->
+    <users>
+        <user
+            password="$1$xyz$YACkVSgLQHtAXVTV.wIyR/"
+            home="/home/geeko" name="geeko" groups="users"
+        />
+        <user
+            password="$1$xyz$..z0J0HuUZ73rVznp2H.s/"
+            home="/root" name="root" groups="root"
+        />
+      </users>
     <packages type="image">
         <package name="patterns-sles-Minimal"/>
         <package name="aaa_base-extras"/> <!-- wouldn't be SUSE without that ;-) -->
