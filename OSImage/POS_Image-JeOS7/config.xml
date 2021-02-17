@@ -28,6 +28,7 @@
         <package name="chrony"/>
         <package name="curl"/>
         <package name="dracut"/>
+	<package name="dracut-kiwi-oem-repart"/>
         <package name="fipscheck"/>
         <package name="group(mail)"/> <!-- needed by useradd bsc#1061838-->
         <package name="group(wheel)"/>
