@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<image schemaversion="6.1" name="POS_Image_JeOS7">
+<image schemaversion="6.1" name="dpv_JeOS7">
     <description type="system">
-        <author>Admin User</author>
-        <contact>noemail@example.com</contact>
+        <author>Don Vosburg</author>
+        <contact>dvosburg@.com</contact>
         <specification>SUSE Linux Enterprise 15 SP2 JeOS</specification>
     </description>
     <preferences>
-        <version>7.0.0</version>
+        <version>7.0.10</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
 
         <locale>en_US</locale>
         <keytable>us.map.gz</keytable>
-        <timezone>Europe/Berlin</timezone>
+        <timezone>Americas/Detroit</timezone>
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
-        <type filesystem="ext3" image="pxe" initrd_system="dracut"></type>
+        <type filesystem="ext4" image="oem" format="qcow2" initrd_system="dracut"></type>
     </preferences>
 
     <packages type="image">
@@ -53,6 +53,7 @@
         <package name="iproute2"/> 
         <package name="openssh"/>
         <package name="rsync"/>
+	<package name="which"/>
 
         <!-- Only for btrfs
         <package name="btrfsprogs"/>
