@@ -14,7 +14,7 @@
 
         <locale>en_US</locale>
         <keytable>us.map.gz</keytable>
-        <timezone>Americas/Detroit</timezone>
+        <timezone>America/Detroit</timezone>
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
