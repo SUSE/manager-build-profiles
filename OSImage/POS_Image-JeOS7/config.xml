@@ -18,10 +18,13 @@
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
-        <type filesystem="ext4" image="oem" format="qcow2" initrd_system="dracut">
-	     <size unit="G">20</size>
-	    </type>
-    </preferences>
+	<type filesystem="ext4" image="oem" format="qcow2" initrd_system="dracut">
+	  <size unit="G" additive="false" >60</size>	
+          <oemconfig>
+	    <oem-resize>true</oem-resize>
+          </oemconfig>
+	</type>
+     </preferences>
      <users>
         <user
             password="$1$xyz$dCB0XV.AZGZOsJNJwnQVi0"
