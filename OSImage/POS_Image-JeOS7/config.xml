@@ -18,9 +18,20 @@
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
-        <type filesystem="ext4" image="oem" format="qcow2" initrd_system="dracut"></type>
+        <type filesystem="ext4" image="oem" format="qcow2" initrd_system="dracut">
+	     <size unit="G">20</size>
+	    </type>
     </preferences>
-
+     <users>
+        <user
+            password="$1$xyz$dCB0XV.AZGZOsJNJwnQVi0"
+            home="/home/guest" name="guest" groups="users"
+        />
+        <user
+            password="$1$xyz$..z0J0HuUZ73rVznp2H.s/"
+            home="/root" name="root" groups="root"
+        />
+      </users>
     <packages type="image">
         <package name="patterns-base-minimal_base"/>
         <package name="aaa_base-extras"/> <!-- wouldn't be SUSE without that ;-) -->
