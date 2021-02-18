@@ -93,6 +93,12 @@ EOF
 chkconfig sshd on
 
 #======================================
+# Enable salt-minion
+#--------------------------------------
+systemctl enable salt-minion
+
+
+#======================================
 # Remove doc files
 #--------------------------------------
 # baseStripDocs
