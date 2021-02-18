@@ -19,8 +19,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-test -f /.kconfig && . /.kconfig
-test -f /.profile && . /.profile
+# test -f /.kconfig && . /.kconfig
+# test -f /.profile && . /.profile
 
 systemctl enable salt-minion.service
 
