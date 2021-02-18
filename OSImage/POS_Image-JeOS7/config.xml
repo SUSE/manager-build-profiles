@@ -7,7 +7,7 @@
         <specification>SUSE Linux Enterprise 15 SP2 JeOS</specification>
     </description>
     <preferences>
-        <version>7.0.14</version>
+        <version>7.0.15</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
