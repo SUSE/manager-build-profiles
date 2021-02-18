@@ -48,12 +48,14 @@ rm -f /etc/machine-id \
       /var/lib/zypp/AnonymousUniqueId \
       /var/lib/systemd/random-seed \
       /var/lib/dbus/machine-id
+dbus-uuidgen --ensure
+systemd-machine-id-setup
 
 #======================================
 # SuSEconfig
 #--------------------------------------
-echo "** Running suseConfig..."
-suseConfig
+# echo "** Running suseConfig..."
+# suseConfig
 
 echo "** Running ldconfig..."
 /sbin/ldconfig
@@ -61,7 +63,7 @@ echo "** Running ldconfig..."
 #======================================
 # Setup baseproduct link
 #--------------------------------------
-suseSetupProduct
+# suseSetupProduct
 
 #======================================
 # Specify default runlevel
@@ -93,7 +95,7 @@ chkconfig sshd on
 #======================================
 # Remove doc files
 #--------------------------------------
-baseStripDocs
+# baseStripDocs
 
 #======================================
 # Sysconfig Update
@@ -103,14 +105,14 @@ echo '** Update sysconfig entries...'
 baseUpdateSysConfig /etc/sysconfig/network/dhcp DHCLIENT_SET_HOSTNAME yes
 
 # Enable firewalld
-chkconfig firewalld on
+# chkconfig firewalld on
 
 # Set GRUB2 to boot graphically (bsc#1097428)
 sed -Ei"" "s/#?GRUB_TERMINAL=.+$/GRUB_TERMINAL=gfxterm/g" /etc/default/grub
 sed -Ei"" "s/#?GRUB_GFXMODE=.+$/GRUB_GFXMODE=auto/g" /etc/default/grub
 
 # On UEFI machines use linuxefi entries
-echo 'GRUB_USE_LINUXEFI="true"' >> /etc/default/grub
+# echo 'GRUB_USE_LINUXEFI="true"' >> /etc/default/grub
 
 # Systemd controls the console font now
 echo FONT="$CONSOLE_FONT" >> /etc/vconsole.conf
