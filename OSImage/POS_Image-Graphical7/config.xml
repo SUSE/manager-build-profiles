@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<image schemaversion="6.1" name="POS_Image_Graphical7">
+<image schemaversion="6.1" name="POS_Image_biglots">
     <description type="system">
-        <author>Admin User</author>
-        <contact>noemail@example.com</contact>
+        <author>dvosburg</author>
+        <contact>dvosburg@suse.com</contact>
         <specification>SUSE Linux Enterprise 15 SP2 Graphical Image</specification>
     </description>
     <preferences>
-        <version>7.0.0</version>
+	<version>7.0.14</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
 
         <locale>en_US</locale>
         <keytable>us.map.gz</keytable>
-        <timezone>Europe/Berlin</timezone>
+        <timezone>America/New_York</timezone>
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
         <type filesystem="ext3" image="pxe" initrd_system="dracut"></type>
     </preferences>
-
+      <users>
+        <user
+            password="$1$xyz$dCB0XV.AZGZOsJNJwnQVi0"
+            home="/home/guest" name="guest" groups="users"
+        />
+        <user
+            password="$1$xyz$..z0J0HuUZ73rVznp2H.s/"
+            home="/root" name="root" groups="root"
+        />
+      </users>
     <packages type="image">
         <package name="patterns-base-minimal_base"/>
         <package name="aaa_base-extras"/> <!-- wouldn't be SUSE without that ;-) -->
@@ -53,6 +62,7 @@
         <package name="iproute2"/> 
         <package name="openssh"/>
         <package name="rsync"/>
+	<package name="java-1_8_0-ibm"/>
 
         <!-- Only for btrfs
         <package name="btrfsprogs"/>
@@ -93,6 +103,7 @@
 
         <!-- packages specific for Graphical image -->
         <package name="patterns-gnome-gnome_basic"/>
+	<package name="patterns-gnome-gnome_basis"/>    
         <package name="patterns-base-x11"/>
         <package name="xorg-x11-server"/>
         <package name="xorg-x11"/>
@@ -105,7 +116,9 @@
         <package name="alsa"/>
         <package name="pulseaudio"/>
         <package name="MozillaFirefox"/>
+	<package name="google-chrome-stable"/>
         <package name="nautilus"/>
+    	<package name="gnome-terminal"/>
 
         <!-- Themes and branding -->
         <package name="gnome-icon-theme"/>
@@ -119,6 +132,7 @@
         <package name="gnome-shell-classic"/>
 
         <!-- Fonts -->
+	<package name="patterns-fonts-fonts"/>  
         <package name="liberation-fonts"/>
         <package name="google-opensans-fonts"/>
         <package name="cantarell-fonts"/>
