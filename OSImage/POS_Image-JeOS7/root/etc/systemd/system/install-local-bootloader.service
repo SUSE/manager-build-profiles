@@ -1,14 +1,19 @@
 [Unit]
 Description=Install bootloader for local boot
 
-# only if not configured yet
-ConditionPathExists=!/boot/grub2/grub.cfg
+# Saltboot installs the generic initrd downloaded from the Branch Server.
+# This service creates an initrd optimized for this machine (dracut --host-only).
+#
+# Execute the service if any of these files is missing:
+ConditionPathExists=|!/boot/grub2/grub.cfg
+ConditionPathExists=|!/var/lib/misc/bootloader_updated
 
 [Service]
 Type=oneshot
 ExecStartPre=/bin/bash -c 'if [ -e /sys/firmware/efi ]; then sed -i -e "s|^LOADER_TYPE=.*|LOADER_TYPE=\\"grub2-efi\\"|" /etc/sysconfig/bootloader; fi'
 ExecStartPre=/bin/bash -c 'if [ ! -e /sys/firmware/efi ]; then sed -i -e "s|^LOADER_TYPE=.*|LOADER_TYPE=\\"grub2\\"|" /etc/sysconfig/bootloader; fi'
 ExecStart=/bin/bash -c 'pbl --install ; dracut -f ; pbl --config '
+ExecStartPost=touch /var/lib/misc/bootloader_updated
 
 [Install]
 WantedBy=multi-user.target
