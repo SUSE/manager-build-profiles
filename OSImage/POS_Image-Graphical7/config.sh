@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2021 SUSE LLC
+# Copyright (c) 2022 SUSE LLC
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,6 @@ test -f /.profile && . /.profile
 
 mkdir /var/lib/misc/reconfig_system
 
-set -euxo pipefail
-
 #======================================
 # Greeting...
 #--------------------------------------
@@ -36,8 +34,8 @@ echo "Configure image: [$name]..."
 
 #======================================
 # add missing fonts
-#--------------------------------------
 # Systemd controls the console font now
+#--------------------------------------
 echo FONT="eurlatgr.psfu" >> /etc/vconsole.conf
 
 #======================================
@@ -49,6 +47,9 @@ rm -f /etc/machine-id \
       /var/lib/zypp/AnonymousUniqueId \
       /var/lib/systemd/random-seed \
       /var/lib/dbus/machine-id
+
+echo "** Running ldconfig..."
+/sbin/ldconfig
 
 #======================================
 # Setup baseproduct link
@@ -76,6 +77,12 @@ STARTMODE='auto'
 ETHTOOL_OPTIONS=''
 USERCONTROL='no'
 EOF
+
+#======================================
+# Remove doc files
+#--------------------------------------
+rm -rf /usr/share/doc/*
+rm -rf /usr/share/man/man*/*
 
 #======================================
 # Sysconfig Update
