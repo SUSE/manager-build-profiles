@@ -22,6 +22,11 @@
         <type boot="isoboot/suse-SLES12" image="iso"></type>
         <type boot="oemboot/suse-SLES12" filesystem="ext3" image="oem" installiso="true"></type>
     </preferences>
+	
+    <drivers>
+      <file name="drivers/block/virtio_blk.ko" />
+    </drivers>
+
     <!--    CUSTOM REPOSITORY -->
     <repository type="rpm-dir">
       <source path="this://repo"/>
