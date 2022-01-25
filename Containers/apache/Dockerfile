@@ -1,7 +1,7 @@
-FROM registry.suse.com/suse/sles12sp5:latest
+FROM registry.suse.com/suse/sle15:15.3
 LABEL maintainer="Michele Bologna <michele.bologna@suse.com>"
 LABEL name="SUSE Manager apache build profile"
-LABEL version="2.0.1-20220125"
+LABEL version="3.0.1-20220125"
 
 ARG repo
 ARG cert
