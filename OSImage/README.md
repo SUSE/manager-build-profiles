@@ -40,9 +40,9 @@ Available Kiwi profiles:
 * SLE Micro 5.1
   * `Default`
   * `Default-RT`
-  * `Default-kvm`
-  * `Default-dasd`
-  * `Default-fba`
+  * `Default-legacy`
+  * `Default-vdi-legacy`
+  * `Default-qcow`
 
 ## Image deployment
 
