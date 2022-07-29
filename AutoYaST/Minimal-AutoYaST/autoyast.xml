@@ -39,7 +39,6 @@
  <scripts>
   <init-scripts config:type="list">
    <script>
-    <interpreter>shell</interpreter>
     <location>http://192.168.1.1/pub/bootstrap/my_bootstrap.sh</location>
    </script>
   </init-scripts>

@@ -68,7 +68,6 @@
     <start_immediately config:type="boolean">true</start_immediately>
   </networking>
   <software>
-    <image/>
     <install_recommended config:type="boolean">true</install_recommended>
     <instsource/>
     <packages config:type="list">
