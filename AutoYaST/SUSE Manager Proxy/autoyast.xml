@@ -71,7 +71,9 @@
     <install_recommended config:type="boolean">true</install_recommended>
     <instsource/>
     <packages config:type="list">
-      <package>salt-minion</package>
+      <!-- Use salt bundle by default, uncomment salt-minion if needed -->
+      <package>venv-salt-minion</package>
+      <!--<package>salt-minion</package> -->
     </packages>
     <patterns config:type="list">
       <pattern>suma_proxy</pattern>
