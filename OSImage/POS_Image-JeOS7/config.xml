@@ -64,7 +64,11 @@
         -->
 
         <package name="kernel-default"/>
+
+	<package name="venv-salt-minion"/>
+	<!-- or
 	<package name="salt-minion"/>
+	-->
 
 	<package name="dracut-saltboot"/>
         <package name="mdadm"/>

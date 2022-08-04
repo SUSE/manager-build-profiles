@@ -70,7 +70,12 @@
         <package name="kernel-default"/>
         <package name="python-base"/>
         <package name="rsync"/>
+        <!-- packages for saltboot: -->
+        <package name="venv-salt-minion"/>
+        <!-- or
         <package name="salt-minion"/>
+        -->
+
         <!-- packages required by file provides, BS can't resolve them -->
         <package name="suse-build-key"/>
         <package name="pkg-config"/>
