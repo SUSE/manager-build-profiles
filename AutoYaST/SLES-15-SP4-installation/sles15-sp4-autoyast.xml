@@ -5,51 +5,51 @@
     <add_on_products config:type="list">
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-sles15-sp2-updates-x86_64/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-sles15-sp4-updates-x86_64/$distrotree</media_url>
         <name>sle-product-sles15-updates-x86_64</name>
         <product>SLES15</product>
         <product_dir>/</product_dir>
       </listentry>
        <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-x86_64-sp2/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-x86_64-sp4/$distrotree</media_url>
         <name>susemanager tools pool</name>
         <product>SM Tools</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-x86_64-sp2/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-x86_64-sp4/$distrotree</media_url>
         <name>susemanager tools updates</name>
         <product>SM Tools</product>
         <product_dir>/</product_dir>
       </listentry>
        <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp2-pool-x86_64/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp4-pool-x86_64/$distrotree</media_url>
         <name>basesystem pool</name>
         <product>Basesystem Module</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp2-updates-x86_64/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp4-updates-x86_64/$distrotree</media_url>
         <name>basesystem updates</name>
         <product>Basesystem Module</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp2-pool-x86_64/$distrotree</media_url>
-        <name>SLE-Module-Server-Applications15-SP2-Pool for x86_64</name>
-        <product>Server Applications Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp4-pool-x86_64/$distrotree</media_url>
+        <name>SLE-Module-Server-Applications15-SP4-Pool for x86_64</name>
+        <product>Server Applications Module 15 SP4 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp2-updates-x86_64/$distrotree</media_url>
-        <name>SLE-Module-Server-Applications15-SP2-Updates for x86_64</name>
-        <product>Server Applications Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp4-updates-x86_64/$distrotree</media_url>
+        <name>SLE-Module-Server-Applications15-SP4-Updates for x86_64</name>
+        <product>Server Applications Module 15 SP4 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
      </add_on_products>
@@ -58,7 +58,6 @@
       $SNIPPET('spacewalk/sles_no_signature_checks')
     <mode><confirm config:type="boolean">false</confirm></mode>
     <storage>
-      <partition_alignment config:type="symbol">align_optimal</partition_alignment>
       <start_multipath config:type="boolean">false</start_multipath>
     </storage>
   </general>
@@ -81,11 +80,12 @@
     <keep_install_network config:type="boolean">true</keep_install_network>
   </networking>
   <software>
-    <image/>
     <install_recommended config:type="boolean">true</install_recommended>
     <instsource/>
     <packages config:type="list">
-      <package>salt-minion</package>
+      <!-- Use salt bundle by default, uncomment salt-minion if needed -->
+      <package>venv-salt-minion</package>
+      <!--<package>salt-minion</package> -->
     </packages>
     <patterns config:type="list">
       <pattern>base</pattern>

@@ -114,7 +114,6 @@
       $SNIPPET('spacewalk/sles_no_signature_checks')
     <mode><confirm config:type="boolean">false</confirm></mode>
     <storage>
-      <partition_alignment config:type="symbol">align_optimal</partition_alignment>
       <start_multipath config:type="boolean">false</start_multipath>
     </storage>
   </general>
@@ -128,7 +127,6 @@
     <remove_old config:type="boolean">false</remove_old>
   </backup>
   <software>
-    <image/>
     <install_recommended config:type="boolean">true</install_recommended>
     <instsource/>
     <patterns/>

@@ -71,7 +71,6 @@
     <remove_old config:type="boolean">false</remove_old>
   </backup>
   <software>
-    <image/>
     <install_recommended config:type="boolean">true</install_recommended>
     <instsource/>
     <patterns/>
