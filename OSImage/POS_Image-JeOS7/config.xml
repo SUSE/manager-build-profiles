@@ -4,10 +4,10 @@
     <description type="system">
         <author>Admin User</author>
         <contact>noemail@example.com</contact>
-        <specification>SUSE Linux Enterprise 15 SP2 JeOS</specification>
+        <specification>SUSE Linux Enterprise 15 SP3 JeOS</specification>
     </description>
     <preferences>
-        <version>7.0.0</version>
+        <version>7.1.0</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
@@ -18,7 +18,8 @@
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
-        <type filesystem="ext3" image="pxe" initrd_system="dracut"></type>
+        <!-- add luks="password" in order to generate encrypted image -->
+        <type filesystem="ext3" image="pxe" initrd_system="dracut" compressed="true"></type>
     </preferences>
 
     <packages type="image">
@@ -44,7 +45,6 @@
         <package name="less" />
         <package name="tar"/>
         <package name="parted"/>
-        <package name="SUSEConnect"/>
         <package name="suse-build-key"/>
         <package name="systemd"/>
         <package name="systemd-sysvinit"/>
@@ -68,7 +68,6 @@
 
 	<package name="dracut-saltboot"/>
         <package name="mdadm"/>
-        <package name="cryptsetup"/>
         <package name="kernel-firmware"/>
         <package name="kexec-tools"/>
 
@@ -97,6 +96,5 @@
         <package name="glibc-locale-base"/>
         <package name="ca-certificates-mozilla"/>
         <package name="sles-release"/>
-        <package name="rhn-org-trusted-ssl-cert-osimage"/>
     </packages>
 </image>
