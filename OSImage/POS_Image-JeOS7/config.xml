@@ -18,8 +18,8 @@
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
-        <!-- add luks="password" in order to generate encrypted image -->
-        <type filesystem="ext3" image="pxe" initrd_system="dracut" compressed="true"></type>
+        <!-- add luks="password" attribute below in order to generate encrypted image -->
+        <type filesystem="ext3" image="pxe" initrd_system="dracut" compressed="false"></type>
     </preferences>
 
     <packages type="image">
@@ -67,6 +67,7 @@
 	<package name="salt-minion"/>
 
 	<package name="dracut-saltboot"/>
+        <package name="dmidecode"/>
         <package name="mdadm"/>
         <package name="kernel-firmware"/>
         <package name="kexec-tools"/>
