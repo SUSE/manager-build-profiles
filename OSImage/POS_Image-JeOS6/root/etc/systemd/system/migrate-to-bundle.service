@@ -1,0 +1,15 @@
+[Unit]
+Description=Fix salt configuration for images deployed by older saltboot version
+Requires=venv-salt-minion.service
+Before=venv-salt-minion.service
+
+# only if there is salt bundle with non-bundle retail configuration
+ConditionPathExists=/etc/salt/minion.d/grains-minion_id_prefix.conf
+ConditionPathExists=/etc/venv-salt-minion
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/bin/cp -pr /etc/salt/* /etc/venv-salt-minion ; rm -rf /etc/salt'
+
+[Install]
+WantedBy=multi-user.target
