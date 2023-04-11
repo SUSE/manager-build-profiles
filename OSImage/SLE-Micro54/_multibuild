@@ -1,0 +1,18 @@
+<multibuild>
+        <!-- for release -->
+        <flavor>Default</flavor>
+        <flavor>Default-RT</flavor>
+        <flavor>Default-SelfInstall</flavor>
+        <flavor>Default-RT-SelfInstall</flavor>
+<!-- disabled due to bsc#1197657
+        <flavor>ECS-Anywhere</flavor>
+        <flavor>ECS-Anywhere-SelfInstall</flavor>
+-->
+        <flavor>Default-kvm</flavor>
+        <flavor>Default-dasd</flavor>
+        <flavor>Default-fba</flavor>
+        <!-- for testing purposes only -->
+<!--        <flavor>image-legacy</flavor>
+        <flavor>Default-vdi-legacy</flavor>
+        <flavor>Default-qcow</flavor> -->
+</multibuild>
