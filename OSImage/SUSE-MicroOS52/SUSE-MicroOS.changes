@@ -1,4 +1,118 @@
 -------------------------------------------------------------------
+Tue Mar 29 18:18:24 UTC 2022 - jsrain@suse.com
+
+- disable build of ECS Anywhere images (bsc#1197657)
+
+-------------------------------------------------------------------
+Mon Mar 28 17:41:44 UTC 2022 - jsrain@suse.com
+
+- added aws-cli docker to ECS Anywhere images (bsc#1197611)
+
+-------------------------------------------------------------------
+Mon Mar 14 13:54:15 UTC 2022 - jsrain@suse.com
+
+- do not include cockpit-machines in the images due to
+  dependencies (bsc#1196971)
+
+-------------------------------------------------------------------
+Mon Feb 28 15:18:28 UTC 2022 - jsrain@suse.com
+
+- mount devices by-uuid on s/390x (by-path no longer supported
+  by kiwi)
+
+-------------------------------------------------------------------
+Tue Jan 25 07:38:09 UTC 2022 - jsrain@suse.com
+
+- build ECS-Anywhere images (jsc#SMO-38)
+
+-------------------------------------------------------------------
+Mon Jan 17 15:37:18 UTC 2022 - jsrain@suse.com
+
+- build self-deployable ISO iamges (jsc#SMO-64)
+
+-------------------------------------------------------------------
+Mon Dec 20 17:52:28 UTC 2021 - jsrain@suse.com
+
+- fix image build on s/390x
+- set selinux on kernel cmdline (bsc#1192347)
+
+-------------------------------------------------------------------
+Sun Dec 19 03:33:55 UTC 2021 - jsrain@suse.com
+
+- bump version to 5.2
+
+-------------------------------------------------------------------
+Fri Aug 20 13:09:29 UTC 2021 - jsrain@suse.com
+
+- clean-up the kiwi description
+
+-------------------------------------------------------------------
+Wed Aug 18 01:06:40 UTC 2021 - jsrain@suse.com
+
+- set the image size of s390-kvm to 32GB (bsc#1189148)
+
+-------------------------------------------------------------------
+Sat Aug 14 20:36:12 UTC 2021 - jsrain@suse.com
+
+- change image type of s390-kvm to OEM for proper resize
+  (bsc#1189148)
+
+-------------------------------------------------------------------
+Fri Jul 23 07:07:42 UTC 2021 - jsrain@suse.com
+
+- adapted boot parameters for S/390x images (bsc#1187968)
+
+-------------------------------------------------------------------
+Mon Jul 19 12:20:40 UTC 2021 - jsrain@suse.com
+
+- replace SUSEConnect with suseconnect-ng (jsc#SMO-35)
+
+-------------------------------------------------------------------
+Wed Jul 14 06:13:58 UTC 2021 - jsrain@suse.com
+
+- stop building the k3s flavor
+
+-------------------------------------------------------------------
+Fri Jul  9 07:21:44 UTC 2021 - jsrain@suse.com
+
+- enable qgroups on s/390x images (bsc#1187953)
+
+-------------------------------------------------------------------
+Fri Jun 18 12:06:17 UTC 2021 - jsrain@suse.com
+
+- readd container_runtime to k3s images to provide toolbox
+
+-------------------------------------------------------------------
+Thu Jun 17 12:47:36 UTC 2021 - jsrain@suse.com
+
+- define images for k3s (jsc#SMO-40)
+
+-------------------------------------------------------------------
+Thu Jun 10 10:47:00 UTC 2021 - jsrain@suse.com
+
+- add image definitions for s/390x
+
+-------------------------------------------------------------------
+Wed Apr 28 10:34:56 UTC 2021 - jsrain@suse.com
+
+- don't use 'rd.neednet=0' for RaspberryPi images
+
+-------------------------------------------------------------------
+Fri Apr  9 06:14:48 UTC 2021 - jsrain@suse.com
+
+- use kernel-firmware-all to use compressed firmware
+
+-------------------------------------------------------------------
+Thu Apr  8 14:13:04 UTC 2021 - jsrain@suse.com
+
+- include shim and mokutil also for aarch64 images
+
+-------------------------------------------------------------------
+Wed Apr  7 07:32:59 UTC 2021 - jsrain@suse.com
+
+- bump version to 5.1
+
+-------------------------------------------------------------------
 Wed Feb 24 11:06:52 UTC 2021 - jsrain@suse.com
 
 - include cockpit also in the RT image

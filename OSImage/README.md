@@ -21,21 +21,17 @@ Make sure build hosts use the same base OS version as the templates you are tryi
 
 ## SLE Micro profiles
 
-* SLE Micro 5.0
-  * https://github.com/SUSE/manager-build-profiles#master:OSImage/SUSE-MicroOS50
-
-* SLE Micro 5.1
-  * https://github.com/SUSE/manager-build-profiles#master:OSImage/SUSE-MicroOS51
+* SLE Micro 5.1 https://github.com/SUSE/manager-build-profiles#master:OSImage/SUSE-MicroOS51
+* SLE Micro 5.2 https://github.com/SUSE/manager-build-profiles#master:OSImage/SUSE-MicroOS52
+* SLE Micro 5.3 https://github.com/SUSE/manager-build-profiles#master:OSImage/SLE-Micro53
+* SLE Micro 5.4 https://github.com/SUSE/manager-build-profiles#master:OSImage/SLE-Micro54
 
 SLE Micro profiles must be built on SLE15 buildhost with activation key with corresponding channels.
+
 When creating OS Image profile in SUMA, it is necessary to specify Kiwi option `--profile <profile>`.
 This requires SUSE Manager 4.2.2 or newer.
 
 Available Kiwi profiles:
-
-* SLE Micro 5.0
-  * `Default`
-  * `Default-RT`
 
 * SLE Micro 5.1
   * `Default`
@@ -44,13 +40,23 @@ Available Kiwi profiles:
   * `Default-vdi-legacy`
   * `Default-qcow`
 
+* SLE Micro 5.2 and newer have on top following self install profiles:
+  * Default-SelfInstall
+  * Default-RT-SelfInstall
+
+
 ## Image deployment
 
-SLE11 and SLE12 POS images are meant to be deployed using kiwi-desc-saltboot Saltboot mechanism which is part of SUSE Manager / Uyuni for Retail. They are not meant to be deployed directly to the harddrive.
+SLE12 POS image is meant to be deployed using kiwi-desc-saltboot Saltboot mechanism which is part of SUSE Manager / Uyuni for Retail. It is not meant to be deployed directly to the harddrive.
 
 SLE15 POS images are meant to be deployed using dracuct-saltboot Saltboot mechanism which is part of the SUSE Manager / Uyuni for Retail. They are not meant to be deployed directly to the harddrive.
 
 SLE Micro images are uploaded to SUSE Manager OS Image store, the file format depends on chosen profile.
+
+## Deprecated images
+
+* SLE11 Saltboot images
+* SLE Micro 5.0
 
 ## Requests changes, bug reports
 

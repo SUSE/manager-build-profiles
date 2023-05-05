@@ -1,0 +1,391 @@
+-------------------------------------------------------------------
+Fri Mar 31 11:42:41 UTC 2023 - jsrain@suse.com
+
+- explicilty specify NetworkManagr branding package
+
+-------------------------------------------------------------------
+Mon Mar 13 13:40:36 UTC 2023 - jsrain@suse.com
+
+- include FIPS pattern in the images (jsc#SMO-211)
+
+-------------------------------------------------------------------
+Tue Feb 14 08:56:36 UTC 2023 - jsrain@suse.com
+
+- adjust the disk start sector for RPi image (jsc#PED-3457)
+
+-------------------------------------------------------------------
+Mon Feb 13 10:17:09 UTC 2023 - jsrain@suse.com
+
+- added tuned (jsc#SMO-189) and rt-tests (jsc#SMO-206) to the
+  real-time images
+
+-------------------------------------------------------------------
+Fri Feb  3 09:25:01 UTC 2023 - jsrain@suse.com
+
+- explicitly add libpwquality-tools
+
+-------------------------------------------------------------------
+Mon Nov 28 07:08:30 UTC 2022 - jsrain@suse.com
+
+- switch SELinux to enforcing by default (jsc#SMO-191)
+
+-------------------------------------------------------------------
+Wed Nov 16 08:16:32 UTC 2022 - jsrain@suse.com
+
+- bump image version to 5.4.0
+
+-------------------------------------------------------------------
+Tue Sep 20 05:46:52 UTC 2022 - jsrain@suse.com
+
+- removed cockpit-kdump which is not yet ready
+
+-------------------------------------------------------------------
+Fri Sep  9 11:28:47 UTC 2022 - jsrain@suse.com
+
+- added cockpit-selinux (jsc#CSD-77)
+
+-------------------------------------------------------------------
+Mon Sep  5 10:42:55 UTC 2022 - jsrain@suse.com
+
+- added cockpit-kdump (jsc#SMO-166)
+- added missing cockpit plug-ins to container-host profile
+
+--------------------------------------------------------------------
+Tue Aug 30 12:07:43 UTC 2022 - jsrain@suse.com
+
+- explicitly put selinux=1 to cmdline (bsc#1202449)
+
+-------------------------------------------------------------------
+Fri Aug 26 11:12:35 UTC 2022 - jsrain@suse.com
+
+- added cpuset to the RT image (jsc#SMO-174)
+
+-------------------------------------------------------------------
+Thu Aug 25 13:58:04 UTC 2022 - jsrain@suse.com
+
+- added libudisks2-0_btrfs libudisks2-0_lvm2 (jsc#SMO-154)
+
+-------------------------------------------------------------------
+Fri Aug 19 13:10:09 UTC 2022 - jsrain@suse.com
+
+- move .autorelabel to proper location (bsc#1202437)
+
+-------------------------------------------------------------------
+Mon Aug 15 13:14:32 UTC 2022 - jsrain@suse.com
+
+- added cockpit-tukit (jsc#SMO-22)
+- added cockpit-storaged (jsc#SMO-116)
+
+-------------------------------------------------------------------
+Tue Aug  2 09:26:38 UTC 2022 - jsrain@suse.com
+
+- reverted last change as wrong fix
+
+-------------------------------------------------------------------
+Mon Aug  1 11:52:23 UTC 2022 - jsrain@suse.com
+
+- always enable network in initrd for Combustion (bsc#1201957)
+
+-------------------------------------------------------------------
+Thu Jul 28 07:47:27 UTC 2022 - jsrain@suse.com
+
+- disable boot time-out for SelfIstall media, set default to
+  install
+
+-------------------------------------------------------------------
+Thu Jul 21 06:31:27 UTC 2022 - jsrain@suse.com
+
+- set GRUB time-out via kiwi instead of config.sh
+
+-------------------------------------------------------------------
+Wed Jul 20 22:07:42 UTC 2022 - jsrain@suse.com
+
+- set default GRUB time-out to 3s (jsc#SMO-95)
+
+-------------------------------------------------------------------
+Fri Jul 15 06:24:33 UTC 2022 - jsrain@suse.com
+
+- call iscsi-gen-initiatorname only if present (bsc#1200492)
+
+-------------------------------------------------------------------
+Wed Jun 22 17:13:58 UTC 2022 - jsrain@suse.com
+
+- include NetworkManager / ModemManager (jsc#SMO-84)
+
+-------------------------------------------------------------------
+Mon Jun 13 11:11:04 UTC 2022 - jsrain@suse.com
+
+- fixed typo in /sbin/iscsi-gen-initiatorname (bsc#1200492)
+
+-------------------------------------------------------------------
+Mon Jun 13 06:05:51 UTC 2022 - jsrain@suse.com
+
+- include and enable jeos-firstboot in the image (jsc#SMO-88)
+
+-------------------------------------------------------------------
+Wed Jun  8 16:58:15 UTC 2022 - jsrain@suse.com
+
+- add wpa_supplicant to x86_64 images (bsc#1199084)
+
+-------------------------------------------------------------------
+Sun May 29 11:27:44 UTC 2022 - jsrain@suse.com
+
+- add delay for the iscsi-gen-initiatorname (boo#1198457)
+- update self-install specific section (boo#1199115)
+  taking the latest self-install section from kubic
+
+-------------------------------------------------------------------
+Tue May 24 11:15:03 UTC 2022 - jsrain@suse.com
+
+- rename to SLE-Micro
+- bump to 5.3
+
+-------------------------------------------------------------------
+Tue Mar 29 18:18:24 UTC 2022 - jsrain@suse.com
+
+- disable build of ECS Anywhere images (bsc#1197657)
+
+-------------------------------------------------------------------
+Mon Mar 28 17:41:44 UTC 2022 - jsrain@suse.com
+
+- added aws-cli docker to ECS Anywhere images (bsc#1197611)
+
+-------------------------------------------------------------------
+Mon Mar 14 13:54:15 UTC 2022 - jsrain@suse.com
+
+- do not include cockpit-machines in the images due to
+  dependencies (bsc#1196971)
+
+-------------------------------------------------------------------
+Mon Feb 28 15:18:28 UTC 2022 - jsrain@suse.com
+
+- mount devices by-uuid on s/390x (by-path no longer supported
+  by kiwi)
+
+-------------------------------------------------------------------
+Tue Jan 25 07:38:09 UTC 2022 - jsrain@suse.com
+
+- build ECS-Anywhere images (jsc#SMO-38)
+
+-------------------------------------------------------------------
+Mon Jan 17 15:37:18 UTC 2022 - jsrain@suse.com
+
+- build self-deployable ISO iamges (jsc#SMO-64)
+
+-------------------------------------------------------------------
+Mon Dec 20 17:52:28 UTC 2021 - jsrain@suse.com
+
+- fix image build on s/390x
+- set selinux on kernel cmdline (bsc#1192347)
+
+-------------------------------------------------------------------
+Sun Dec 19 03:33:55 UTC 2021 - jsrain@suse.com
+
+- bump version to 5.2
+
+-------------------------------------------------------------------
+Fri Aug 20 13:09:29 UTC 2021 - jsrain@suse.com
+
+- clean-up the kiwi description
+
+-------------------------------------------------------------------
+Wed Aug 18 01:06:40 UTC 2021 - jsrain@suse.com
+
+- set the image size of s390-kvm to 32GB (bsc#1189148)
+
+-------------------------------------------------------------------
+Sat Aug 14 20:36:12 UTC 2021 - jsrain@suse.com
+
+- change image type of s390-kvm to OEM for proper resize
+  (bsc#1189148)
+
+-------------------------------------------------------------------
+Fri Jul 23 07:07:42 UTC 2021 - jsrain@suse.com
+
+- adapted boot parameters for S/390x images (bsc#1187968)
+
+-------------------------------------------------------------------
+Mon Jul 19 12:20:40 UTC 2021 - jsrain@suse.com
+
+- replace SUSEConnect with suseconnect-ng (jsc#SMO-35)
+
+-------------------------------------------------------------------
+Wed Jul 14 06:13:58 UTC 2021 - jsrain@suse.com
+
+- stop building the k3s flavor
+
+-------------------------------------------------------------------
+Fri Jul  9 07:21:44 UTC 2021 - jsrain@suse.com
+
+- enable qgroups on s/390x images (bsc#1187953)
+
+-------------------------------------------------------------------
+Fri Jun 18 12:06:17 UTC 2021 - jsrain@suse.com
+
+- readd container_runtime to k3s images to provide toolbox
+
+-------------------------------------------------------------------
+Thu Jun 17 12:47:36 UTC 2021 - jsrain@suse.com
+
+- define images for k3s (jsc#SMO-40)
+
+-------------------------------------------------------------------
+Thu Jun 10 10:47:00 UTC 2021 - jsrain@suse.com
+
+- add image definitions for s/390x
+
+-------------------------------------------------------------------
+Wed Apr 28 10:34:56 UTC 2021 - jsrain@suse.com
+
+- don't use 'rd.neednet=0' for RaspberryPi images
+
+-------------------------------------------------------------------
+Fri Apr  9 06:14:48 UTC 2021 - jsrain@suse.com
+
+- use kernel-firmware-all to use compressed firmware
+
+-------------------------------------------------------------------
+Thu Apr  8 14:13:04 UTC 2021 - jsrain@suse.com
+
+- include shim and mokutil also for aarch64 images
+
+-------------------------------------------------------------------
+Wed Apr  7 07:32:59 UTC 2021 - jsrain@suse.com
+
+- bump version to 5.1
+
+-------------------------------------------------------------------
+Wed Feb 24 11:06:52 UTC 2021 - jsrain@suse.com
+
+- include cockpit also in the RT image
+
+-------------------------------------------------------------------
+Mon Feb 22 12:34:55 UTC 2021 - jsrain@suse.com
+
+- include selinux pattern in the images
+
+-------------------------------------------------------------------
+Mon Feb 15 04:03:48 UTC 2021 - jsrain@suse.com
+
+- include in the images firewalld and
+    systemd-default-settings-branding-SLE-Micro
+
+-------------------------------------------------------------------
+Tue Feb  9 09:45:45 UTC 2021 - jsrain@suse.com
+
+- stop building internal-only flavors
+
+-------------------------------------------------------------------
+Wed Feb  3 08:26:27 UTC 2021 - jsrain@suse.com
+
+- include hardware pattern
+- define OBS-Milestone in kiwi file
+
+-------------------------------------------------------------------
+Sun Jan 17 21:11:58 UTC 2021 - jsrain@suse.com
+
+- change the display name of images (bsc#1181053)
+
+-------------------------------------------------------------------
+Fri Jan 15 15:33:43 UTC 2021 - Ignaz Forster <iforster@suse.com>
+
+- Fix Ignition platform IDs
+  For the raw images remove the platform ID completely and let
+  ignition-suse-generator autodetect it, as we don't know whether
+  the image will end up on a real machine; for the qcow image use
+  qemu instead of metal.
+
+-------------------------------------------------------------------
+Mon Dec  7 12:34:44 UTC 2020 - jsrain@suse.com
+
+- include the cockpit pattern
+
+-------------------------------------------------------------------
+Wed Nov 25 14:37:29 UTC 2020 - jsrain@suse.com
+
+- use vim-small instead of vim
+
+-------------------------------------------------------------------
+Tue Nov 24 14:07:29 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
+
+- add grub2-snapper-plugin so snapshots are actually listed in the
+  boot menu
+- add mokutil for secure boot key management
+
+-------------------------------------------------------------------
+Wed Nov 11 16:31:11 UTC 2020 - jsrain@suse.com
+
+- do not include KVM stack in RT images
+- do not include duplicated patterns
+
+-------------------------------------------------------------------
+Tue Nov  3 15:11:06 UTC 2020 - jsrain@suse.com
+
+- renamed image files
+
+-------------------------------------------------------------------
+Thu Oct 29 14:51:39 UTC 2020 - jsrain@suse.com
+
+- removed plymouth
+
+-------------------------------------------------------------------
+Wed Oct 14 11:01:30 UTC 2020 - jsrain@suse.com
+
+- adjusted to patterns rename
+
+-------------------------------------------------------------------
+Tue Oct  6 07:06:42 UTC 2020 - jsrain@suse.com
+
+- added shim to images (bsc#1177316)
+
+-------------------------------------------------------------------
+Mon Oct  5 06:17:44 UTC 2020 - jsrain@suse.com
+
+- build qcow2 image for testing purposes
+
+-------------------------------------------------------------------
+Thu Oct  1 13:33:47 UTC 2020 - jsrain@suse.com
+
+- include combustion in the image (bsc#1177126)
+
+-------------------------------------------------------------------
+Wed Sep 30 14:27:26 UTC 2020 - jsrain@suse.com
+
+- include the suse build key (bsc#1177108)
+
+-------------------------------------------------------------------
+Tue Sep 29 12:16:27 UTC 2020 - jsrain@suse.com
+
+- added the /var subvolume (bsc#1176819)
+
+-------------------------------------------------------------------
+Mon Sep  7 11:28:44 UTC 2020 - jsrain@suse.com
+
+- removed aaa_base-extras
+
+-------------------------------------------------------------------
+Wed Sep  2 07:39:53 UTC 2020 - jsrain@suse.com
+
+- increase required disk space for build to 40 GB
+
+-------------------------------------------------------------------
+Tue Sep  1 06:03:29 UTC 2020 - jsrain@suse.com
+
+- added SUSEConnect into the image
+- use full kernel (including drivers) instead of -base
+
+-------------------------------------------------------------------
+Mon Aug 31 14:07:09 UTC 2020 - jsrain@suse.com
+
+- do not request the flavor -release package
+
+-------------------------------------------------------------------
+Fri Aug 14 07:54:06 UTC 2020 - jsrain@suse.com
+
+- clean-up of unneeded image definitions
+
+-------------------------------------------------------------------
+Thu Aug 13 08:34:07 UTC 2020 - jsrain@suse.com
+
+- initial version
+
