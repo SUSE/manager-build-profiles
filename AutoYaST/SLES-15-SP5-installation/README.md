@@ -1,8 +1,8 @@
-Use these scripts as a base for a SLE15 SP4 installations.
+Use these scripts as a base for a SLE15 SP5 installations.
 The system register at SUSE Manager using salt.
 
-- sles15-sp4-autoyast.xml
-- sle_sap15-sp4-autoyast.xml
+- sles15-sp5-autoyast.xml
+- sle_sap15-sp5-autoyast.xml
 
 For using an activation key, specify the following valiable
 
