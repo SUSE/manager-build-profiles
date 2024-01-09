@@ -4,10 +4,10 @@
     <description type="system">
         <author>dvosburg</author>
         <contact>dvosburg@suse.com</contact>
-        <specification>SUSE Linux Enterprise 15 SP2 Graphical Image</specification>
+        <specification>SUSE Linux Enterprise 15 SP3 Graphical Image</specification>
     </description>
     <preferences>
-	<version>7.0.14</version>
+	<version>7.0.24</version>
         <packagemanager>zypper</packagemanager>
         <bootsplash-theme>SLE</bootsplash-theme>
         <bootloader-theme>SLE</bootloader-theme>
@@ -62,7 +62,6 @@
         <package name="iproute2"/> 
         <package name="openssh"/>
         <package name="rsync"/>
-	<package name="java-1_8_0-ibm"/>
 
         <!-- Only for btrfs
         <package name="btrfsprogs"/>
@@ -74,7 +73,7 @@
         -->
 
         <package name="kernel-default"/>
-	<package name="salt-minion"/>
+	<package name="venv-salt-minion"/>
 
 	<package name="dracut-saltboot"/>
         <package name="mdadm"/>
