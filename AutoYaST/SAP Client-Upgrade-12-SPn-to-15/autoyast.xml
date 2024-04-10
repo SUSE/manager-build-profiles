@@ -5,107 +5,93 @@
     <add_on_products config:type="list">
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-sles_sap15-sp2-updates-x86_64/$distrotree</media_url>
-        <name>SLE-Product-SLES_SAP15-SP2-Pool for x86_64</name>
-        <product>SUSE Linux Enterprise Server for SAP Applications 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-sles_sap15-sp5-updates-x86_64/$distrotree</media_url>
+        <name>SLE-Product-SLES_SAP15-SP5-Pool for x86_64</name>
+        <product>SUSE Linux Enterprise Server for SAP Applications 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
        <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-x86_64-sap-sp2/$distrotree</media_url>
-        <name>SLE-Manager-Tools15-Pool for x86_64 SAP SP2</name>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-x86_64-sap-sp5/$distrotree</media_url>
+        <name>SLE-Manager-Tools15-Pool for x86_64 SAP SP5</name>
         <product>SUSE Manager Tools 15 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-x86_64-sap-sp2/$distrotree</media_url>
-        <name>SLE-Manager-Tools15-Updates for x86_64 SAP SP2</name>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-x86_64-sap-sp5/$distrotree</media_url>
+        <name>SLE-Manager-Tools15-Updates for x86_64 SAP SP5</name>
         <product>SUSE Manager Tools 15 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp2-pool-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Basesystem15-SP2-Pool for x86_64 SAP</name>
-        <product>Basesystem Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp5-pool-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Module-Basesystem15-SP5-Pool for x86_64 SAP</name>
+        <product>Basesystem Module 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp2-updates-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Basesystem15-SP2-Updates for x86_64 SAP</name>
-        <product>Basesystem Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp5-updates-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Module-Basesystem15-SP5-Updates for x86_64 SAP</name>
+        <product>Basesystem Module 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-desktop-applications15-sp2-pool-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Desktop-Applications15-SP2-Pool for x86_64 SAP</name>
-        <product>Desktop Applications Module 15 SP2 x86_64 </product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-desktop-applications15-sp5-pool-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Module-Desktop-Applications15-SP5-Pool for x86_64 SAP</name>
+        <product>Desktop Applications Module 15 SP5 x86_64 </product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-desktop-applications15-sp2-updates-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Desktop-Applications15-SP2-Updates for x86_64 SAP</name>
-        <product>Desktop Applications Module 15 SP2 x86_64 </product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-desktop-applications15-sp5-updates-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Module-Desktop-Applications15-SP5-Updates for x86_64 SAP</name>
+        <product>Desktop Applications Module 15 SP5 x86_64 </product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp2-pool-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Server-Applications15-SP2-Pool for x86_64 SAP</name>
-        <product>Server Applications Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp5-pool-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Module-Server-Applications15-SP5-Pool for x86_64 SAP</name>
+        <product>Server Applications Module 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp2-updates-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Server-Applications15-SP2-Updates for x86_64 SAP</name>
-        <product>Server Applications Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp5-updates-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Module-Server-Applications15-SP5-Updates for x86_64 SAP</name>
+        <product>Server Applications Module 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-ha15-sp2-pool-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Product-HA15-SP2-Pool for x86_64 SAP</name>
-        <product>SUSE Linux Enterprise High Availability Extension 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-ha15-sp5-pool-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Product-HA15-SP5-Pool for x86_64 SAP</name>
+        <product>SUSE Linux Enterprise High Availability Extension 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-ha15-sp2-updates-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Product-HA15-SP2-Updates for x86_64 SAP</name>
-        <product>SUSE Linux Enterprise High Availability Extension 15 SP2 x86_64 </product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-ha15-sp5-updates-x86_64-sap/$distrotree</media_url>
+        <name>SLE-Product-HA15-SP5-Updates for x86_64 SAP</name>
+        <product>SUSE Linux Enterprise High Availability Extension 15 SP5 x86_64 </product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-sap-applications15-sp2-pool-x86_64/$distrotree</media_url>
-        <name>SLE-Module-SAP-Applications15-SP2-Pool for x86_64</name>
-        <product>SAP Applications Module 15 SP2 x86_64</product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-sap-applications15-sp5-pool-x86_64/$distrotree</media_url>
+        <name>SLE-Module-SAP-Applications15-SP5-Pool for x86_64</name>
+        <product>SAP Applications Module 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-sap-applications15-sp2-updates-x86_64/$distrotree</media_url>
-        <name>SLE-Module-SAP-Applications15-SP2-Updates for x86_64</name>
-        <product>SAP Applications Module 15 SP2 x86_64</product>
-        <product_dir>/</product_dir>
-      </listentry>
-      <listentry>
-        <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-python2-15-sp2-pool-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Python2-15-SP2-Pool for x86_64 SAP</name>
-        <product>Python 2 Module 15 SP2 x86_64</product>
-        <product_dir>/</product_dir>
-      </listentry>
-      <listentry>
-        <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-python2-15-sp2-updates-x86_64-sap/$distrotree</media_url>
-        <name>SLE-Module-Python2-15-SP2-Updates for x86_64 SAP</name>
-        <product>Python 2 Module 15 SP2 x86_64 </product>
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-sap-applications15-sp5-updates-x86_64/$distrotree</media_url>
+        <name>SLE-Module-SAP-Applications15-SP5-Updates for x86_64</name>
+        <product>SAP Applications Module 15 SP5 x86_64</product>
         <product_dir>/</product_dir>
       </listentry>
      </add_on_products>
@@ -118,7 +104,6 @@
     </storage>
   </general>
   <upgrade>
-    <only_installed_packages config:type="boolean">false</only_installed_packages>
     <stop_on_solver_conflict config:type="boolean">true</stop_on_solver_conflict>
   </upgrade>
   <backup>
@@ -129,7 +114,6 @@
   <software>
     <install_recommended config:type="boolean">true</install_recommended>
     <instsource/>
-    <patterns/>
     <products config:type="list">
       <listentry>SLES_SAP</listentry>
     </products>
@@ -137,8 +121,8 @@
   <scripts>
     <init-scripts config:type="list">
       $SNIPPET('spacewalk/minion_script')
-<!-- when client is traditional registered, please use this snippet
-      $SNIPPET('spacewalk/sles_register_script')
+<!-- when client is traditional registered, please replace the above snippet value with
+      'spacewalk/sles_register_script'
 -->
     </init-scripts>
   </scripts>
