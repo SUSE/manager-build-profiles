@@ -64,9 +64,11 @@
         -->
 
         <package name="kernel-default"/>
+        <!-- packages for saltboot and SUSE Manager -->
+        <package name="hostname"/>
 	<package name="venv-salt-minion"/>
-
 	<package name="dracut-saltboot"/>
+
         <package name="mdadm"/>
         <package name="kernel-firmware"/>
         <package name="kexec-tools"/>

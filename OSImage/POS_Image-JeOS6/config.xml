@@ -70,7 +70,8 @@
         <package name="kernel-default"/>
         <package name="python-base"/>
         <package name="rsync"/>
-        <!-- packages for saltboot: -->
+        <!-- packages for saltboot and SUSE Manager -->
+        <package name="hostname"/>
         <package name="venv-salt-minion"/>
         <!-- or
         <package name="salt-minion"/>
