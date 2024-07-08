@@ -1,0 +1,66 @@
+-------------------------------------------------------------------
+Mon Jul  8 10:33:01 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
+
+- Add sysconfig/bootloader file (bsc#1227504)
+- Add changelog from package
+
+-------------------------------------------------------------------
+Thu Jul 28 12:46:32 UTC 2022 - Vladimir Nadvornik <nadvornik@suse.com>
+
+- Use salt bundle
+
+-------------------------------------------------------------------
+Thu May 23 13:54:24 UTC 2019 - Ondrej Holecek <oholecek@suse.com>
+
+- Updated copyrights and bug reporting link
+- Update to version 0.1.1558613789.64ba093
+
+-------------------------------------------------------------------
+Wed Jan  9 16:21:58 UTC 2019 - nadvornik@suse.com
+
+- Add busybox package for tftp client
+
+-------------------------------------------------------------------
+Wed Sep 19 14:22:20 UTC 2018 - Ondrej Holecek <oholecek@suse.com>
+
+- Change image deploy event to suse/manager/image_deployed
+
+-------------------------------------------------------------------
+Tue Aug 21 12:03:39 UTC 2018 - nadvornik@suse.com
+
+- Notify SUSE Manager about newly deployed image
+
+-------------------------------------------------------------------
+Wed May 23 08:38:31 UTC 2018 - oholecek@suse.com
+
+- Update SUSE Manager certificate RPM name
+
+-------------------------------------------------------------------
+Thu May 10 13:01:59 UTC 2018 - oholecek@suse.com
+
+- Add osimage suffix to certificate name
+
+-------------------------------------------------------------------
+Fri Apr  6 10:48:21 UTC 2018 - nadvornik@suse.com
+
+- Add rhn-org-trusted-ssl-cert package
+
+-------------------------------------------------------------------
+Wed Mar 21 16:01:09 UTC 2018 - nadvornik@suse.com
+
+- Fix image name in config.xml
+
+-------------------------------------------------------------------
+Sun Mar 18 16:10:17 UTC 2018 - oholecek@suse.com
+
+- Do not set root password by default
+- Tune jeos package list
+- SLES12-SP3-JeOS based image
+- Update POS_Image_JeOS link to repackaged saltboot
+- Adjust POS_Image-JeOS6 image for SUMA repos
+
+-------------------------------------------------------------------
+Wed May 31 16:17:07 UTC 2017 - nadvornik@suse.com
+
+- new package
+
