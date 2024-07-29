@@ -3,6 +3,7 @@ Mon Jul 29 11:35:00 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
 
 - Enable compressed builds
 - Add changelog from packages
+- Add hostname package for manual bootstrapping (bsc#1222182)
 
 -------------------------------------------------------------------
 Thu Jul 28 12:48:25 UTC 2022 - Vladimir Nadvornik <nadvornik@suse.com>
