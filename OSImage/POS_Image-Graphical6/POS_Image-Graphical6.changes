@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Jul 29 11:32:55 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
+
+- Enable compressed builds
+- Add hostname package for manual bootstrapping (bsc#1222182)
+
+-------------------------------------------------------------------
 Mon Jul  8 12:54:26 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
 
 - Add sysconfig/bootloader file (bsc#1227504)
