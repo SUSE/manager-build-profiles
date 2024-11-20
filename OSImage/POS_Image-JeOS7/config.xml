@@ -4,7 +4,7 @@
     <description type="system">
         <author>Don Vosburg</author>
         <contact>dvosburg@.com</contact>
-        <specification>SUSE Linux Enterprise 15 SP2 JeOS</specification>
+        <specification>SUSE Linux Enterprise 15 SP6 JeOS</specification>
     </description>
     <preferences>
         <version>7.0.15</version>
