@@ -13,7 +13,7 @@
         <bootloader-theme>SLE</bootloader-theme>
 
         <locale>en_US</locale>
-        <keytable>us.map.gz</keytable>
+        <keytable>us</keytable>
         <timezone>America/Detroit</timezone>
         <hwclock>utc</hwclock>
 
