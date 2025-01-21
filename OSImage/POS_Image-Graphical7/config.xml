@@ -13,7 +13,7 @@
         <bootloader-theme>SLE</bootloader-theme>
 
         <locale>en_US</locale>
-        <keytable>us.map.gz</keytable>
+        <keytable>us</keytable>
         <timezone>Europe/Berlin</timezone>
         <hwclock>utc</hwclock>
 
@@ -29,6 +29,7 @@
         <package name="chrony"/>
         <package name="curl"/>
         <package name="dracut"/>
+        <package name="procps"/> <!-- needed for dracut network-legacy -->
         <package name="fipscheck"/>
         <package name="group(mail)"/> <!-- needed by useradd bsc#1061838-->
         <package name="group(wheel)"/>
@@ -110,7 +111,6 @@
         <package name="nautilus"/>
 
         <!-- Themes and branding -->
-        <package name="gnome-icon-theme"/>
         <package name="gnome-menus-branding-SLE"/>
         <package name="gtk2-metatheme-adwaita"/>
         <package name="gtk3-metatheme-adwaita"/>

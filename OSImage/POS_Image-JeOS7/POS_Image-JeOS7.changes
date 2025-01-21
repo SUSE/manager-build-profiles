@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Jan  9 14:22:50 UTC 2025 - Ondrej Holecek <oholecek@suse.com>
+
+- Fix keytable (bsc#1233607)
+- Add saltboot install check and missing procps dependnecy
+
+-------------------------------------------------------------------
 Mon Jul 29 11:35:00 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
 
 - Enable compressed builds
