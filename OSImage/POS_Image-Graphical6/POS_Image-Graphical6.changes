@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Dec 13 10:10:26 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
+
+- fix hostname package name
+- remove unused image types and conform with kiwi-ng
+
+-------------------------------------------------------------------
 Mon Jul 29 11:32:55 UTC 2024 - Ondrej Holecek <oholecek@suse.com>
 
 - Enable compressed builds

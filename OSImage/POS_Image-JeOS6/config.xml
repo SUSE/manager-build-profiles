@@ -18,9 +18,7 @@
         <hwclock>utc</hwclock>
 
         <rpm-excludedocs>true</rpm-excludedocs>
-        <type boot="saltboot/suse-SLES12" bootloader="grub2" checkprebuilt="true" compressed="true" filesystem="ext3" fsmountoptions="acl" fsnocheck="true" image="pxe" kernelcmdline="quiet"></type>
-        <type boot="isoboot/suse-SLES12" image="iso"></type>
-        <type boot="oemboot/suse-SLES12" filesystem="ext3" image="oem" installiso="true"></type>
+        <type boot="saltboot/suse-SLES12" checkprebuilt="true" compressed="true" filesystem="ext3" fsmountoptions="acl" fsnocheck="true" image="pxe" kernelcmdline="quiet"></type>
     </preferences>
     <!--    CUSTOM REPOSITORY -->
     <repository type="rpm-dir">
@@ -71,7 +69,7 @@
         <package name="python-base"/>
         <package name="rsync"/>
         <!-- packages for saltboot and SUSE Manager -->
-        <package name="hostname"/>
+        <package name="net-tools"/>
         <package name="venv-salt-minion"/>
         <!-- or
         <package name="salt-minion"/>
