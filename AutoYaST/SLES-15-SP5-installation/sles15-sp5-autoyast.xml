@@ -111,7 +111,7 @@
       </password_settings>
       <shell>/bin/bash</shell>
       <uid>0</uid>
-      <user_password>linux</user_password>
+      <user_password></user_password>
       <username>root</username>
     </user>
   </users>

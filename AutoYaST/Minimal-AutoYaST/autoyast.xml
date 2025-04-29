@@ -33,7 +33,7 @@
    <shell>/bin/bash</shell>
    <uid>0</uid>
    <username>root</username>
-   <user_password>linux</user_password>
+   <user_password></user_password>
   </user>
  </users>
  <scripts>

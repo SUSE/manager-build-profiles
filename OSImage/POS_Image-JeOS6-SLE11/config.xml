@@ -21,11 +21,6 @@
 		<bootsplash-theme>SLEPOS</bootsplash-theme>
 		<bootloader-theme>SLEPOS</bootloader-theme>
 	</preferences>
-<!-- password: "linux"
-	<users group="root">
-		<user password="$1$X4nzuRfs$Cw2KXDXsgUUNpasZZi7I/1" name="root" home="/root" shell="/bin/bash"/>
-	</users>
--->
 	<repository type="rpm-dir">
 		<source path="this://repo"/>
 	</repository>
