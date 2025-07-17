@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SLE Micro 5.5 with salt bundle
+It assumes system variables plus these entered on the variables tab:
+org='organization_id'
+distrotree='autoinstallation_distribution_label'
+registration_key='activation_key_for_post_upgrade'
+
+Optionally set a channel_prefix variable to use content lifecycle channels instead of the SCC ones:
+channel_prefix='clm_channel_prefix'
+-->
+<!DOCTYPE profile>
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <add-on>
+    <add_on_products config:type="list">
+     <listentry>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-micro-5.5-updates-x86_64/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-micro-5.5-updates-x86_64/$distrotree</media_url>
+        #end if
+        <product>SLE-Micro</product>
+        <name>SLE-Micro-5.5-Updates</name>
+        <alias>SLE-Micro-5.5-Updates</alias>
+        <priority config:type="integer">99</priority>
+        <product_dir/>
+      </listentry>
+      <listentry>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools-for-micro5-pool-x86_64-5.5/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools-for-micro5-pool-x86_64-5.5/$distrotree</media_url>
+        #end if
+        <product>SLE-Micro-SUSE-Manager-Tools-5.5-Pool</product>
+        <name>SLE-Micro-SUSE-Manager-Tools-5.5-Pool</name>
+        <alias>SLE-Micro-SUSE-Manager-Tools-5.5-Pool</alias>
+        <priority config:type="integer">99</priority>
+        <product_dir/>
+      </listentry>
+      <listentry>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools-for-micro5-updates-x86_64-5.5/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools-for-micro5-updates-x86_64-5.5/$distrotree</media_url>
+        #end if
+        <product>SLE-Micro-SUSE-Manager-Tools-5.5-Updates</product>
+        <name>SLE-Micro-SUSE-Manager-Tools-5.5-Updates</name>
+        <alias>SLE-Micro-SUSE-Manager-Tools-5.5-Updates</alias>
+        <priority config:type="integer">99</priority>
+        <product_dir/>
+      </listentry>
+      <!-- MLM Proxy channels -->
+      <listentry>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-pool-x86_64/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-pool-x86_64/$distrotree</media_url>
+        #end if
+        <product>SUSE-Manager-Proxy-5.0-Pool</product>
+        <name>SUSE-Manager-Proxy-5.0-Pool</name>
+        <alias>SUSE-Manager-Proxy-5.0-Pool</alias>
+        <priority config:type="integer">99</priority>
+        <product_dir/>
+      </listentry>
+      <listentry>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-updates-x86_64/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-updates-x86_64/$distrotree</media_url>
+        #end if
+        <product>SUSE-Manager-Proxy-5.0-Updates</product>
+        <name>SUSE-Manager-Proxy-5.0-Updates</name>
+        <alias>SUSE-Manager-Proxy-5.0-Updates</alias>
+        <priority config:type="integer">99</priority>
+        <product_dir/>
+      </listentry>
+    </add_on_products>
+  </add-on>
+
+   <bootloader>
+    <global>
+      <timeout config:type="integer">5</timeout>
+      <hiddenmenu>false</hiddenmenu>
+    </global>
+  </bootloader>
+
+  <general>
+    <self_update config:type="boolean">false</self_update>
+    <mode>
+      <second_stage config:type="boolean">false</second_stage>
+      <confirm config:type="boolean">false</confirm>
+    </mode>
+    <signature-handling>
+      <accept_file_without_checksum config:type="boolean">true</accept_file_without_checksum>
+      <accept_non_trusted_gpg_key config:type="boolean">true</accept_non_trusted_gpg_key>
+      <accept_unknown_gpg_key config:type="boolean">true</accept_unknown_gpg_key>
+      <accept_unsigned_file config:type="boolean">true</accept_unsigned_file>
+      <accept_verification_failed config:type="boolean">true</accept_verification_failed>
+      <import_gpg_key config:type="boolean">true</import_gpg_key>
+    </signature-handling>
+  </general>
+  
+ <partitioning config:type="list">
+    <drive>
+      <enable_snapshots config:type="boolean">true</enable_snapshots>
+      <initialize config:type="boolean">false</initialize>
+      <partitions config:type="list">
+        <partition>
+          <create config:type="boolean">true</create>
+          <filesystem config:type="symbol">vfat</filesystem>
+          <format config:type="boolean">true</format>
+          <mount>/boot/efi</mount>
+          <mountby config:type="symbol">uuid</mountby>
+          <partition_id config:type="integer">259</partition_id>
+          <partition_nr config:type="integer">1</partition_nr>
+          <resize config:type="boolean">false</resize>
+          <size>524288000</size>
+        </partition>
+        <partition>
+          <create config:type="boolean">true</create>
+          <create_subvolumes config:type="boolean">true</create_subvolumes>
+          <filesystem config:type="symbol">btrfs</filesystem>
+          <format config:type="boolean">true</format>
+          <mount>/</mount>
+          <mountby config:type="symbol">uuid</mountby>
+          <partition_id config:type="integer">131</partition_id>
+          <partition_nr config:type="integer">2</partition_nr>
+          <resize config:type="boolean">false</resize>
+          <size>max</size>
+          <subvolumes config:type="list">
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>opt</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>home</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>root</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>usr/local</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">false</copy_on_write>
+              <path>var</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>boot/grub2/i386-pc</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>boot/grub2/x86_64-efi</path>
+            </subvolume>
+            <subvolume>
+              <copy_on_write config:type="boolean">true</copy_on_write>
+              <path>srv</path>
+            </subvolume>
+          </subvolumes>
+          <subvolumes_prefix><![CDATA[@]]></subvolumes_prefix>
+        </partition>
+        </partitions>
+      <type config:type="symbol">CT_DISK</type>
+      <use>all</use>
+   </drive>
+  </partitioning>
+
+   <software>
+    <products config:type="list">
+      <product>SLE-Micro</product>
+    </products>
+    <install_recommended config:type="boolean">true</install_recommended>
+    <packages config:type="list">
+      <package>grub2</package>
+      <package>open-iscsi</package>
+      <package>NetworkManager</package>
+      <package>dmidecode</package>
+      <package>hostname</package>
+      <package>patterns-microos-sssd_ldap</package>
+      <package>python3-pycurl</package>
+      <package>python3-simplejson</package>
+      <package>venv-salt-minion</package>
+      <package>podman</package>
+      <package>netavark</package>
+      <package>mgrpxy</package>
+      <package>mgrpxy-bash-completion</package>
+      <package>uyuni-storage-setup-proxy</package>
+      <package>SUSE-Manager-Proxy-release</package>
+      <!-- Install images to avoid trying to download from the registry -->
+      <package>suse-manager-5.0-x86_64-proxy-httpd-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-salt-broker-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-squid-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-ssh-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-tftpd-image</package>
+    </packages>
+    <remove-packages  config:type="list">
+      <package>samba-client-libs</package>
+    </remove-packages>
+    <patterns config:type="list">
+      <pattern>basesystem</pattern>
+      <pattern>microos-container_runtime</pattern>
+      <pattern>microos-selinux</pattern>
+    </patterns>
+  </software>
+
+  <services-manager>
+    <default_target>multi-user</default_target>
+    <services>
+      <enable config:type="list">
+        <service>sshd</service>
+        <service>run-before-login-prompt</service>
+      </enable>
+    </services>
+  </services-manager>
+
+  <security>
+     <lsm_select>selinux</lsm_select>
+  </security>
+
+  <users config:type="list">
+    <user>
+      <authorized_keys config:type="list"/>
+      <encrypted config:type="boolean">false</encrypted>
+      <fullname>root</fullname>
+      <gid>0</gid>
+      <home>/root</home>
+      <home_btrfs_subvolume config:type="boolean">false</home_btrfs_subvolume>
+      <password_settings>
+        <expire/>
+        <flag/>
+        <inact/>
+        <max/>
+        <min/>
+        <warn/>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password></user_password><!--TODO: set your password here-->
+      <username>root</username>
+    </user>
+  </users>
+  <keyboard>
+    <keymap>us</keymap>
+  </keyboard>
+  <language>
+    <language>en_US</language>
+  </language>
+
+  <networking>
+    <keep_install_network config:type="boolean">true</keep_install_network>
+    <backend>network_manager</backend>
+    <dns>
+      <hostname>$hostname</hostname>
+    </dns>
+  </networking>
+
+
+ <kdump>
+  <add_crash_kernel config:type="boolean">false</add_crash_kernel>
+</kdump>
+
+<files config:type="list">
+  <file>
+    <file_path>/usr/local/bin/boot_script.sh</file_path>
+    <file_contents><![CDATA[#!/bin/bash
+SALT_MINION_CONF_DIR="/etc/venv-salt-minion/minion.d"
+SALT_MINION_SERVICE="venv-salt-minion"
+SALT_MINION_DIR="/etc/venv-salt-minion"
+
+# temporarily set SELinux to permissive
+setenforce 0
+systemctl --now disable transactional-update.timer
+curl -skS https://$redhat_management_server/pub/RHN-ORG-TRUSTED-SSL-CERT --output /etc/pki/trust/anchors/RHN-ORG-TRUSTED-SSL-CERT
+update-ca-certificates
+
+# Optionally set hostname to a prefix with IP concatenation
+hostname > $SALT_MINION_DIR/minion_id
+echo "master: $redhat_management_server" > $SALT_MINION_CONF_DIR/susemanager.conf
+echo "server_id_use_src: adler42" >> $SALT_MINION_CONF_DIR/susemanager.conf
+echo "enable_legacy_startup_events: False" >> $SALT_MINION_CONF_DIR/susemanager.conf
+echo "enable_fqdns_grains: False" >> $SALT_MINION_CONF_DIR/susemanager.conf
+
+#set activation_keys = ""
+#set management_key  = ""
+#if $varExists('registration_key')
+   #set activation_keys = $registration_key
+#end if
+#if $varExists('redhat_management_key')
+   #set management_key = $redhat_management_key.split(",",1)[0]
+#end if
+#if not $activation_keys and $management_key
+  #set keys= $redhat_management_key.split(",",1)
+  #if len(keys) > 1
+     #set activation_keys = $keys[1]
+  #end if
+#end if
+#if $activation_keys or $management_key
+cat <<EOF >>"$SALT_MINION_CONF_DIR/susemanager.conf"
+grains:
+    susemanager:
+EOF
+#end if
+#if $management_key
+cat <<EOF >>"$SALT_MINION_CONF_DIR/susemanager.conf"
+        management_key: "$management_key"
+EOF
+#end if
+#if $activation_keys
+cat <<EOF >>"$SALT_MINION_CONF_DIR/susemanager.conf"
+        activation_key: "$activation_keys"
+EOF
+#end if
+
+# build the beacons file
+echo "beacons:" > $SALT_MINION_CONF_DIR/beacons.conf
+echo "  reboot_info:" >> $SALT_MINION_CONF_DIR/beacons.conf
+echo "    interval: 10" >> $SALT_MINION_CONF_DIR/beacons.conf
+# build the transactional_update.conf file
+echo "module_executors:" > $SALT_MINION_CONF_DIR/transactional_update.conf
+echo "  - transactional_update" >> $SALT_MINION_CONF_DIR/transactional_update.conf
+echo "  - direct_call" >> $SALT_MINION_CONF_DIR/transactional_update.conf
+# mv $SALT_MINION_CONF_DIR/transactional_update.conf /root
+# touch $SALT_MINION_CONF_DIR/transactional_update.conf
+systemctl enable --now $SALT_MINION_SERVICE
+sleep 90
+touch /root/finishinstall
+# Added for systemd service disable
+mv  /etc/systemd/system/run-before-login-prompt.service /tmp/
+reboot
+]]>
+    </file_contents>
+    <file_permissions>555</file_permissions>
+  </file>
+  <file>
+    <file_path>/etc/systemd/system/run-before-login-prompt.service</file_path>
+    <file_contents><![CDATA[[Unit]
+Description=Run script with systemd right before login prompt
+After=systemd-user-sessions.service
+Before=getty.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/boot_script.sh
+
+[Install]
+WantedBy=multi-user.target
+]]>
+    </file_contents>
+  </file>
+</files>
+</profile>
+
