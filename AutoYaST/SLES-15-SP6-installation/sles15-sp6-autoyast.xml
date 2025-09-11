@@ -12,14 +12,14 @@
       </listentry>
        <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-x86_64-sp6/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/managertools-sle15-pool-x86_64-sp6/$distrotree</media_url>
         <name>susemanager tools pool</name>
         <product>SM Tools</product>
         <product_dir>/</product_dir>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-x86_64-sp6/$distrotree</media_url>
+        <media_url>http://$redhat_management_server/ks/dist/child/managertools-sle15-updates-x86_64-sp6/$distrotree</media_url>
         <name>susemanager tools updates</name>
         <product>SM Tools</product>
         <product_dir>/</product_dir>
