@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE profile>
-<!-- Profile base on dvosburg profiles for sles 15sp6 
-SLES15 SP6 from scratch with salt bundle and all proxy packages
+<!-- Profile base on dvosburg profiles for sles 15sp7 
+SLES15 SP7 from scratch with salt bundle and all proxy packages
 It assumes system variables plus these entered on the variables tab:
 org='organization_id'
 distrotree='autoinstallation_distribution_label'
@@ -13,14 +13,14 @@ channel_prefix='clm_channel_prefix'
 <profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
   <add-on>
     <add_on_products config:type="list">
-    <!-- All SLES 15 SP6 repos listed here - comment out what is unneeded -->
+    <!-- All SLES 15 SP7 repos listed here - comment out what is unneeded -->
       <!-- Manager Tools repos -->
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-pool-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-pool-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Pool</name>
         <product>sle-manager-tools</product>
@@ -28,9 +28,9 @@ channel_prefix='clm_channel_prefix'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-updates-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-updates-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Updates</name>
         <product>sle-manager-tools</product>
@@ -39,107 +39,107 @@ channel_prefix='clm_channel_prefix'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp6-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp7-pool-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp6-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp7-pool-$arch/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP6 Pool for $arch</name>
+        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP7 Pool for $arch</name>
         <product>sle-module-basesystem</product>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp7-updates-$arch/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP6 Updates for $arch</name>
+        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP7 Updates for $arch</name>
         <product>sle-module-basesystem</product>
       </listentry>
       <!-- Server Applications repos -->
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp6-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp7-pool-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp6-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp7-pool-$arch/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-SP6 Pool for $arch</name>
+        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-SP7 Pool for $arch</name>
         <product>sle-module-server-applications</product>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp7-updates-$arch/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-SP6 Updates for $arch</name>
+        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-SP7 Updates for $arch</name>
         <product>sle-module-server-applications</product>
       </listentry>
 
-      <!-- SLE15SP6 product updates -->
+      <!-- SLE15SP7 product updates -->
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-product-sles15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-product-sles15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-product-sles15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-product-sles15-sp7-updates-$arch/$distrotree</media_url>
         #end if
-        <name>SUSE Linux Enterprise Server 15 SP6 Updates for $arch</name>
+        <name>SUSE Linux Enterprise Server 15 SP7 Updates for $arch</name>
         <product>SLES</product>
       </listentry>
       <!-- SLE15 Installer updates -->
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle15-sp6-installer-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle15-sp7-installer-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle15-sp6-installer-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle15-sp7-installer-updates-$arch/$distrotree</media_url>
         #end if
-        <name>SUSE Linux Enterprise Server 15 SP6 Installer Updates for $arch</name>
+        <name>SUSE Linux Enterprise Server 15 SP7 Installer Updates for $arch</name>
         <product>SLES</product>
       </listentry>
       <!-- containers repos -->
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp6-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp7-pool-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp6-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp7-pool-$arch/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP6-Pool for $arch</name>
+        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP7-Pool for $arch</name>
         <product>sle-module-containers</product>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp6-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp7-updates-$arch/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP6-Updates for $arch</name>
+        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP7-Updates for $arch</name>
         <product>sle-module-containers</product>
       </listentry>
-      <!-- 5.0 proxy repos -->
+      <!-- 5.1 proxy repos -->
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-pool-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.1-pool-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-pool-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.1-pool-$arch-sp7/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '') SUSE-Manager-Proxy-5.0-Pool for $arch</name>
+        <name>$getVar('channel_prefix', '') SUSE-Manager-Proxy-5.1-Pool for $arch</name>
         <product>SUSE-Manager-Proxy</product>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-updates-$arch-sp6/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-updates-$arch-sp6/$distrotree</media_url>
+       \ <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
         #end if
-        <name>$getVar('channel_prefix', '')  SUSE-Manager-Proxy-5.0-Updates for $arch</name>
+        <name>$getVar('channel_prefix', '')  SUSE-Manager-Proxy-5.1-Updates for $arch</name>
         <product>SUSE-Manager-Proxy</product>
       </listentry>
     </add_on_products>
@@ -236,13 +236,13 @@ channel_prefix='clm_channel_prefix'
       <package>mgrpxy</package>
       <package>mgrpxy-bash-completion</package>
       <package>uyuni-storage-setup-proxy</package>
-      <package>SUSE-Manager-Proxy-release</package>
+      <package>Multi-Linux-Manager-Proxy-SLE-release</package>
       <!-- Install images to avoid trying to download from the registry -->
-      <package>suse-manager-5.0-$arch-proxy-httpd-image</package>
-      <package>suse-manager-5.0-$arch-proxy-salt-broker-image</package>
-      <package>suse-manager-5.0-$arch-proxy-squid-image</package>
-      <package>suse-manager-5.0-$arch-proxy-ssh-image</package>
-      <package>suse-manager-5.0-$arch-proxy-tftpd-image</package>
+      <package>suse-multi-linux-manager-5.1-$arch-proxy-httpd-image</package>
+      <package>suse-multi-linux-manager-5.1-$arch-proxy-salt-broker-image</package>
+      <package>suse-multi-linux-manager-5.1-$arch-proxy-squid-image</package>
+      <package>suse-multi-linux-manager-5.1-$arch-proxy-ssh-image</package>
+      <package>suse-multi-linux-manager-5.1-$arch-proxy-tftpd-image</package>
     </packages>
     <patterns config:type="list">
       <pattern>base</pattern>
@@ -282,7 +282,8 @@ channel_prefix='clm_channel_prefix'
         <source><![CDATA[
 /usr/bin/curl --insecure -o RHN-ORG-TRUSTED-SSL-CERT https://$redhat_management_server/pub/RHN-ORG-TRUSTED-SSL-CERT
 mv RHN-ORG-TRUSTED-SSL-CERT /etc/pki/trust/anchors/
-/usr/sbin/update-ca-certificates]]></source>
+/usr/sbin/update-ca-certificates
+            ]]></source>
       </script>
     </pre-scripts>
     <init-scripts config:type="list">
