@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<!-- Profile base on dvosburg profiles for sles 15sp6 
+SLES15 SP6 from scratch with salt bundle and all proxy packages
+It assumes system variables plus these entered on the variables tab:
+org='organization_id'
+distrotree='autoinstallation_distribution_label'
+registration_key='activation_key_for_post_upgrade'
+
+Optionally set a channel_prefix variable to use content lifecycle channels instead of the SCC ones:
+channel_prefix='clm_channel_prefix'
+-->
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <add-on>
+    <add_on_products config:type="list">
+    <!-- All SLES 15 SP6 repos listed here - comment out what is unneeded -->
+      <!-- Manager Tools repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-pool-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Pool</name>
+        <product>sle-manager-tools</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-updates-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Updates</name>
+        <product>sle-manager-tools</product>
+      </listentry>
+      <!-- Base system repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp6-pool-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp6-pool-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP6 Pool for $arch</name>
+        <product>sle-module-basesystem</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP6 Updates for $arch</name>
+        <product>sle-module-basesystem</product>
+      </listentry>
+      <!-- Server Applications repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp6-pool-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp6-pool-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-SP6 Pool for $arch</name>
+        <product>sle-module-server-applications</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-SP6 Updates for $arch</name>
+        <product>sle-module-server-applications</product>
+      </listentry>
+
+      <!-- SLE15SP6 product updates -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-product-sles15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-product-sles15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>SUSE Linux Enterprise Server 15 SP6 Updates for $arch</name>
+        <product>SLES</product>
+      </listentry>
+      <!-- SLE15 Installer updates -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle15-sp6-installer-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle15-sp6-installer-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>SUSE Linux Enterprise Server 15 SP6 Installer Updates for $arch</name>
+        <product>SLES</product>
+      </listentry>
+      <!-- containers repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp6-pool-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp6-pool-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP6-Pool for $arch</name>
+        <product>sle-module-containers</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP6-Updates for $arch</name>
+        <product>sle-module-containers</product>
+      </listentry>
+      <!-- 5.0 proxy repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-pool-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-pool-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SUSE-Manager-Proxy-5.0-Pool for $arch</name>
+        <product>SUSE-Manager-Proxy</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-updates-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-updates-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '')  SUSE-Manager-Proxy-5.0-Updates for $arch</name>
+        <product>SUSE-Manager-Proxy</product>
+      </listentry>
+    </add_on_products>
+  </add-on>
+  <general>
+    $SNIPPET('spacewalk/sles_no_signature_checks')
+    <mode><confirm config:type="boolean">false</confirm></mode>
+  </general>
+  <storage>
+    <partition_alignment config:type="symbol">align_optimal</partition_alignment>
+    <start_multipath config:type="boolean">false</start_multipath>
+  </storage>
+
+  <!-- configure local storage -->
+  <partitioning config:type="list">
+    <drive>
+      <use>all</use>
+      <partitions config:type="list">
+        <partition>
+          <mount>/boot/efi</mount>
+          <size>200mb</size>
+          <partition_id config:type="integer">1</partition_id>
+          <filesystem config:type="symbol">vfat</filesystem>
+        </partition>
+        <partition>
+          <filesystem config:type="symbol">xfs</filesystem>
+          <mount>/</mount>
+          <size>max</size>
+        </partition>
+      </partitions>
+    </drive>
+  </partitioning>
+
+  <networking>
+    <keep_install_network config:type="boolean">true</keep_install_network>
+  </networking>
+
+  <!-- configure language and timezone -->
+  <keyboard>
+    <keymap>us</keymap>
+  </keyboard>
+  <language>
+    <language>en_US</language>
+    <languages/>
+  </language>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+
+  <!-- configure ntp client -->
+  <ntp-client>
+    <ntp_policy>auto</ntp_policy>
+    <ntp_servers config:type="list">
+      <ntp_server>
+        <!-- replace ntp server address value bellow with one from your infrastructure -->
+        <address>69.164.198.192</address>
+        <iburst config:type="boolean">true</iburst>
+        <offline config:type="boolean">true</offline>
+      </ntp_server>
+    </ntp_servers>
+    <ntp_sync>systemd</ntp_sync>
+  </ntp-client>
+
+  <services-manager>
+    <default_target>multi-user</default_target>
+    <services>
+      <disable config:type="list">
+        <service>purge-kernels</service>
+        <service>firewalld</service>
+      </disable>
+      <enable config:type="list">
+        <service>sshd</service>
+        <service>chronyd</service>
+      </enable>
+    </services>
+  </services-manager>
+
+  <software>
+    <install_recommended config:type="boolean">true</install_recommended>
+    <instsource/>
+    <packages config:type="list">
+      <package>vim</package>
+      <package>wget</package>
+      <package>iputils</package>
+      <package>openssh-server</package>
+      <package>openssh</package>
+      <package>firewalld</package>
+      <package>autoyast2</package>
+      <package>autoyast2-installation</package>
+      <package>venv-salt-minion</package>
+      <package>podman</package>
+      <package>netavark</package>
+      <package>mgrpxy</package>
+      <package>mgrpxy-bash-completion</package>
+      <package>uyuni-storage-setup-proxy</package>
+      <package>SUSE-Manager-Proxy-release</package>
+      <!-- Install images to avoid trying to download from the registry -->
+      <package>suse-manager-5.0-$arch-proxy-httpd-image</package>
+      <package>suse-manager-5.0-$arch-proxy-salt-broker-image</package>
+      <package>suse-manager-5.0-$arch-proxy-squid-image</package>
+      <package>suse-manager-5.0-$arch-proxy-ssh-image</package>
+      <package>suse-manager-5.0-$arch-proxy-tftpd-image</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>base</pattern>
+      <pattern>minimal_base</pattern>
+    </patterns>
+    <products config:type="list">
+      <listentry>SLES</listentry>
+    </products>
+  </software>
+  <users config:type="list">
+    <user>
+      <authorized_keys config:type="list"/>
+      <encrypted config:type="boolean">false</encrypted>
+      <fullname>root</fullname>
+      <gid>0</gid>
+      <home>/root</home>
+      <home_btrfs_subvolume config:type="boolean">false</home_btrfs_subvolume>
+      <password_settings>
+        <expire/>
+        <flag/>
+        <inact/>
+        <max/>
+        <min/>
+        <warn/>
+      </password_settings>
+      <shell>/bin/bash</shell>
+      <uid>0</uid>
+      <user_password></user_password><!--TODO: set your password here-->
+      <username>root</username>
+    </user>
+  </users>
+  <scripts>
+    <pre-scripts config:type="list">
+      <script>
+        <filename>01_install_cert</filename>
+        <interpreter>shell</interpreter>
+        <source><![CDATA[
+/usr/bin/curl --insecure -o RHN-ORG-TRUSTED-SSL-CERT https://$redhat_management_server/pub/RHN-ORG-TRUSTED-SSL-CERT
+mv RHN-ORG-TRUSTED-SSL-CERT /etc/pki/trust/anchors/
+/usr/sbin/update-ca-certificates]]></source>
+      </script>
+    </pre-scripts>
+    <init-scripts config:type="list">
+      $SNIPPET('spacewalk/minion_script')
+    </init-scripts>
+  </scripts>
+</profile>

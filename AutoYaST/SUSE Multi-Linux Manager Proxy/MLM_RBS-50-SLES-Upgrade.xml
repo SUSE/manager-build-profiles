@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+<!-- Profile based on dvosburg profiles for sles 15sp6 
+SLES15 SP6 from scratch with salt bundle and all retail branch server packages
+It assumes system variables plus these entered on the variables tab:
+org='organization_id'
+distrotree='autoinstallation_distribution_label'
+registration_key='activation_key_for_post_upgrade'
+
+Optionally set a channel_prefix variable to use content lifecycle channels instead of the SCC ones:
+channel_prefix='clm_channel_prefix'
+-->
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <add-on>
+    <add_on_products config:type="list">
+      <!-- All SLES 15 SP6 repos listed here - comment out what is unneeded -->
+      <!-- Manager Tools repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-pool-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Pool</name>
+        <product>sle-manager-tools</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-updates-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Updates</name>
+        <product>sle-manager-tools</product>
+      </listentry>
+      <!-- Base system repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp6-pool-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp6-pool-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP6 Pool for $arch</name>
+        <product>sle-module-basesystem</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-sp6 Updates for $arch</name>
+        <product>sle-module-basesystem</product>
+      </listentry>
+      <!-- Server Applications repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp6-pool-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp6-pool-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-sp6 Pool for $arch</name>
+        <product>sle-module-server-applications</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-sp6 Updates for $arch</name>
+        <product>sle-module-server-applications</product>
+      </listentry>
+      <!-- containers repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp6-pool-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-containers15-sp6-pool-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP6-Pool for $arch</name>
+        <product>sle-module-containers</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-containers15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP6-Updates for $arch</name>
+        <product>sle-module-containers</product>
+      </listentry>
+      <!-- SLE15SP6 product updates -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-product-sles15-sp6-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-sles15-sp6-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>SUSE Linux Enterprise Server 15 SP6 Updates for $arch</name>
+        <product>SLES</product>
+      </listentry>
+      <!-- SLE15 Installer updates -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle15-sp6-installer-updates-$arch/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/sle15-sp6-installer-updates-$arch/$distrotree</media_url>
+        #end if
+        <name>SUSE Linux Enterprise Server 15 SP6 Installer Updates for $arch</name>
+        <product>SLES</product>
+      </listentry>
+      <!-- MLM 5.0 Retail Branch Server repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-retail-branch-server-5.0-pool-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/suse-manager-retail-branch-server-5.0-pool-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SUSE-Manager-Retail-Branch-Server-5.0-Pool for $arch SP6</name>
+        <product>SUSE-Manager-Retail-Branch-Server</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-retail-branch-server-5.0-updates-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/suse-manager-retail-branch-server-5.0-updates-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SUSE-Manager-Retail-Branch-Server-5.0-Updates for $arch SP6</name>
+        <product>SUSE-Manager-Retail-Branch-Server</product>
+      </listentry>
+
+      <!-- MLM 5.0 Proxy repos -->
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+        #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-pool-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-pool-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SUSE-Manager-Proxy-Pool for $arch SP6</name>
+        <product>SUSE-Manager-Proxy</product>
+      </listentry>
+      <listentry>
+        <ask_on_error config:type="boolean">true</ask_on_error>
+      #if $getVar('channel_prefix', '') != ""
+        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.0-updates-$arch-sp6/$distrotree</media_url>
+        #else
+        <media_url>http://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.0-updates-$arch-sp6/$distrotree</media_url>
+        #end if
+        <name>$getVar('channel_prefix', '') SUSE-Manager-Proxy-5.0-Updates for $arch SP6</name>
+        <product>SUSE-Manager-Proxy</product>
+      </listentry>
+    </add_on_products>
+  </add-on>
+  <upgrade>
+    <stop_on_solver_conflict config:type="boolean">true</stop_on_solver_conflict>
+  </upgrade>
+  <software>
+    <products config:type="list">
+      <product>SLES</product>
+    </products>
+    <!-- Add any desired additional packages or patterns here -->
+    <packages config:type="list">
+      <package>autoyast2-installation</package>
+      <package>sle-manager-tools-release</package>
+      <package>issue-generator</package>
+      <!-- Use salt bundle by default, uncomment salt-minion if needed.  This should match your original system. -->
+      <package>venv-salt-minion</package>
+      <!--<package>salt-minion</package> -->
+      <!-- Install the needed 5.0 proxy files -->
+      <package>SUSE-Manager-Retail-Branch-Server-release</package>
+      <package>podman</package>
+      <package>netavark</package>
+      <package>mgrpxy</package>
+      <package>mgrpxy-bash-completion</package>
+      <package>uyuni-storage-setup-proxy</package>
+      <package>SUSE-Manager-Proxy-release</package>
+      <!-- Install images to avoid trying to download from the registry -->
+      <package>suse-manager-5.0-x86_64-proxy-httpd-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-salt-broker-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-squid-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-ssh-image</package>
+      <package>suse-manager-5.0-x86_64-proxy-tftpd-image</package>
+    </packages>
+    <patterns config:type="list">
+      <pattern>base</pattern>
+    </patterns>
+    <!-- Remove  any deprecated or obsoleted packages and/or patterns here -->
+    <remove-packages  config:type="list">
+      <!-- These were 4.3 VM proxy packages -->
+      <package>sle-module-suse-manager-proxy-release</package>
+      <package>release-notes-susemanager-proxy</package>
+      <package>skelcd-control-suse-manager-retail-branch-server</package>
+      <package>/spacewalk.*/</package>
+      <package>spacewalk-backend</package>
+      <package>spacewalk-base-minimal</package>
+      <package>spacewalk-proxy-salt</package>
+      <package>susemanager-build-keys</package>
+      <package>susemanager-build-keys-web</package>
+      <package>rpm-build</package>
+      <package>python3-python-debian</package>
+      <package>apache2</package>
+      <package>apache2-prefork</package>
+      <package>apache2-utils</package>
+      <package>salt-broker</package>
+      <package>python3-salt</package>
+      <package>python3-gssapi</package>
+      <package>salt</package>
+      <package>tftp</package>
+      <package>squid</package>
+      <package>dhcp-server</package>
+      <package>jabberd</package>
+      <package>jabberd-sqlite</package>
+      <package>spacewalk-setup-jabberd</package>
+      <package>skelcd-control-suse-manager-retail-branch-server</package>
+      <package>uyuni-base-common</package>
+    </remove-packages>
+  </software>
+  <backup>
+    <sysconfig config:type="boolean">true</sysconfig>
+    <modified config:type="boolean">true</modified>
+    <remove_old config:type="boolean">false</remove_old>
+  </backup>
+  <networking>
+    <keep_install_network config:type="boolean">true</keep_install_network>
+    <start_immediately config:type="boolean">true</start_immediately>
+  </networking>
+  <general>
+    $SNIPPET('spacewalk/sles_no_signature_checks')
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+      <!-- Second stage of the yast installer is not needed for an upgrade profile -->
+      <second_stage config:type="boolean">false</second_stage>
+    </mode>
+  </general>
+  <scripts>
+    <pre-scripts config:type="list">
+      <!-- This script is designed to ensure the certificate is present for any 'http' repositories -->
+      <script>
+        <rerun config:type="boolean">false</rerun>
+        <debug config:type="boolean">true</debug>
+        <feedback config:type="boolean">false</feedback>
+        <filename>01_install_cert</filename>
+        <interpreter>shell</interpreter>
+        <location/>
+        <notification>Installing repository certificate</notification>
+        <source><![CDATA[
+/usr/bin/curl --insecure -o RHN-ORG-TRUSTED-SSL-CERT https://$redhat_management_server/pub/RHN-ORG-TRUSTED-SSL-CERT
+mv RHN-ORG-TRUSTED-SSL-CERT /etc/pki/trust/anchors/
+/usr/sbin/update-ca-certificates]]></source>
+      </script>
+    </pre-scripts>
+    <chroot-scripts config:type="list">
+      <!-- This script is designed to ensure the certificate is present for any 'http' repositories, and remove old repositories -->
+      <script>
+        <debug config:type="boolean">true</debug>
+        <feedback config:type="boolean">false</feedback>
+        <filename>chroot.sh</filename>
+        <interpreter>shell</interpreter>
+        <notification>Removing old repository info</notification>
+        <source><![CDATA[
+zypper ms -d --all
+zypper ms -e --medium-type plugin
+zypper mr -d --all
+zypper mr -e --medium-type plugin
+rm -rf /etc/zypp/repos.d/http*
+rm -rf /mnt/etc/zypp/repos.d/suseman* >/mnt/tmp/removed-at-chroot
+/usr/bin/curl --insecure -o RHN-ORG-TRUSTED-SSL-CERT https://$redhat_management_server/pub/RHN-ORG-TRUSTED-SSL-CERT
+mv RHN-ORG-TRUSTED-SSL-CERT /mnt/etc/pki/trust/anchors/
+/usr/sbin/update-ca-certificates]]>
+        </source>
+      </script>
+    </chroot-scripts>
+    <init-scripts config:type="list">
+      <!-- This script is designed to register with the upgraded activation key and do post-deployment cleanup -->
+      $SNIPPET('spacewalk/minion_script')
+      <script>
+        <filename>proxy-migration.sh</filename>
+        <source><![CDATA[
+# Change baseproduct link to SLES
+rm -rf /etc/products.d/baseproduct
+ln -s /etc/products.d/SLES.prod /etc/products.d/baseproduct
+
+# Remove content from old Proxy directories replaced by containers
+rm -rf /srv/saltboot/*
+rm -rf /var/cache/squid/*
+
+systemctl stop "$SALT_MINION_SERVICE"
+sleep 10
+systemctl start "$SALT_MINION_SERVICE"
+sleep 30
+
+# download config and install proxy
+hostset=`hostname`
+/usr/bin/curl --insecure -o  $hostset-config.tar.gz https://$redhat_management_server/pub/$hostset-config.tar.gz
+mv $hostset-config.tar.gz /root/
+mgrpxy install podman /root/$hostset-config.tar.gz
+]]>
+        </source>
+      </script>
+    </init-scripts>
+  </scripts>
+</profile>
