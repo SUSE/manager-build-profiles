@@ -15,9 +15,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-managertools-sle15-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-managertools-sle15-pool-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/managertools-sle15-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/managertools-sle15-pool-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') Multi-Linux-ManagerTools-SLE Pool</name>
         <product>Multi-Linux-ManagerTools-SLE</product>
@@ -25,9 +25,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-managertools-sle15-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-managertools-sle15-updates-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/managertools-sle15-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/managertools-sle15-updates-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') Multi-Linux-ManagerTools-SLE Updates</name>
         <product>Multi-Linux-ManagerTools-SLE</product>
@@ -36,9 +36,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp7-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp7-pool-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp7-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp7-pool-$arch/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-SP7 Pool for $arch</name>
         <product>sle-module-basesystem</product>
@@ -46,9 +46,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-basesystem15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-basesystem15-sp7-updates-$arch/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-Module-Basesystem15-sp7 Updates for $arch</name>
         <product>sle-module-basesystem</product>
@@ -57,9 +57,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp7-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp7-pool-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp7-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp7-pool-$arch/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-sp7 Pool for $arch</name>
         <product>sle-module-server-applications</product>
@@ -67,9 +67,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-server-applications15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-server-applications15-sp7-updates-$arch/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-Module-Server-Applications15-sp7 Updates for $arch</name>
         <product>sle-module-server-applications</product>
@@ -78,9 +78,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp7-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp7-pool-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-containers15-sp7-pool-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp7-pool-$arch/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP7-Pool for $arch</name>
         <product>sle-module-containers</product>
@@ -88,9 +88,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-module-containers15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-module-containers15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-module-containers15-sp7-updates-$arch/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-Module-Containers15-SP7-Updates for $arch</name>
         <product>sle-module-containers</product>
@@ -99,9 +99,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-product-sles15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-product-sles15-sp7-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle-product-sles15-sp7-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle-product-sles15-sp7-updates-$arch/$distrotree</media_url>
         #end if
         <name>SUSE Linux Enterprise Server 15 SP7 Updates for $arch</name>
         <product>SLES</product>
@@ -110,9 +110,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle15-sp7-installer-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle15-sp7-installer-updates-$arch/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/sle15-sp7-installer-updates-$arch/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/sle15-sp7-installer-updates-$arch/$distrotree</media_url>
         #end if
         <name>SUSE Linux Enterprise Server 15 SP7 Installer Updates for $arch</name>
         <product>SLES</product>
@@ -121,9 +121,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-multi-linux-manager-retail-branch-server-sle-5.1-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-multi-linux-manager-retail-branch-server-sle-5.1-pool-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/suse-multi-linux-manager-retail-branch-server-sle-5.1-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-multi-linux-manager-retail-branch-server-sle-5.1-pool-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') Multi-Linux-Manager-Retail-Branch-Server-5.1-Pool for $arch SP7</name>
         <product>Multi-Linux-Manager-Retail-Branch-Server-SLE</product>
@@ -131,9 +131,9 @@ registration_key='activation_key_for_post_upgrade'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
       #if $getVar('channel_prefix', '') != ""
-        <media_url>http://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-multi-linux-manager-retail-branch-server-sle-5.1-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-multi-linux-manager-retail-branch-server-sle-5.1-updates-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>http://$redhat_management_server/ks/dist/child/suse-multi-linux-manager-retail-branch-server-sle-5.1-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-multi-linux-manager-retail-branch-server-sle-5.1-updates-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') Multi-Linux-Manager-Retail-Branch-Server-5.1-Updates for $arch SP7</name>
         <product>Multi-Linux-Manager-Retail-Branch-Server-SLE</product>
@@ -150,13 +150,13 @@ registration_key='activation_key_for_post_upgrade'
     <!-- Add any desired additional packages or patterns here -->
     <packages config:type="list">
       <package>autoyast2-installation</package>
-      <package>sle-manager-tools-release</package>
+      <package>Multi-Linux-ManagerTools-SLE-release</package>
       <package>issue-generator</package>
       <!-- Use salt bundle by default, uncomment salt-minion if needed.  This should match your original system. -->
       <package>venv-salt-minion</package>
       <!--<package>salt-minion</package> -->
       <!-- Install the needed 5.1 RBS files -->
-      <package>Multi-Linux-Manager-Retail-Branch-Server-release</package>
+      <package>Multi-Linux-Manager-Retail-Branch-Server-SLE-release</package>
       <package>podman</package>
       <package>netavark</package>
       <package>mgrpxy</package>
@@ -237,28 +237,6 @@ mv RHN-ORG-TRUSTED-SSL-CERT /etc/pki/trust/anchors/
 /usr/sbin/update-ca-certificates]]></source>
       </script>
     </pre-scripts>
-    <chroot-scripts config:type="list">
-      <!-- This script is designed to ensure the certificate is present for any 'http' repositories, and remove old repositories -->
-      <script>
-        <debug config:type="boolean">true</debug>
-        <feedback config:type="boolean">false</feedback>
-        <filename>chroot.sh</filename>
-          <interpreter>shell</interpreter>
-          <notification>Removing old repository info</notification>
-          <source><![CDATA[
-zypper ms -d --all
-zypper ms -e --medium-type plugin
-zypper mr -d --all
-zypper mr -e --medium-type plugin
-rm -rf /etc/zypp/repos.d/http*
-rm -rf /mnt/etc/zypp/repos.d/suseman* >/mnt/tmp/removed-at-chroot
-/usr/bin/curl --insecure -o RHN-ORG-TRUSTED-SSL-CERT https://$redhat_management_server/pub/RHN-ORG-TRUSTED-SSL-CERT
-mv RHN-ORG-TRUSTED-SSL-CERT /mnt/etc/pki/trust/anchors/
-/usr/sbin/update-ca-certificates
-]]>
-        </source>
-      </script>
-    </chroot-scripts>
     <init-scripts config:type="list">
       $SNIPPET('spacewalk/minion_script')
       <script>
