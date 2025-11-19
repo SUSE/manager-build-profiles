@@ -137,7 +137,7 @@ channel_prefix='clm_channel_prefix'
         #if $getVar('channel_prefix', '') != ""
         <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
         #else
-       \ <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '')  SUSE-Manager-Proxy-5.1-Updates for $arch</name>
         <product>SUSE-Manager-Proxy</product>
