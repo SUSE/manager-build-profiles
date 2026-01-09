@@ -1,4 +1,4 @@
-# SUSE Multi-Manager Proxy autoinstallation templates
+# SUSE Multi-Linux Manager 5.1 Proxy autoinstallation templates
 
 This action will re-install the proxy from scratch, meaning no cache will be preserved.
 
@@ -7,9 +7,10 @@ You can install it using AutoYaST:
 
 1. Create an autoinstallation tree as outlined in the product documentation
 
-2. Create an AutoYaST profile. You can use this example as a starting point.
+2. Create an AutoYaST profile. You can use these examples as a starting point:
+    * `MLM_Proxy-51-SLES-Install.xml` for a new installation of Multi-Linux Manager 5.1 Proxy.
+    * `MLM_RBS-51-SLES-Upgrade.xml` for an upgrade of legacy Retail Branch Server 4.3 to Multi-Linux Manager 5.1 Retail Branch Server.
 
-    * Start with template provided in this directory.
     * Ensure you change the `<user_password>` to match your own settings.
     * Create autoinstallation profile with adapted autoyast XML and based on autoinstallation distribution created in previous step.
     * Ensure distro label created in step 1 is set in the variable `distrotree`
