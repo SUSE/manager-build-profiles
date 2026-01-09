@@ -18,22 +18,22 @@ channel_prefix='clm_channel_prefix'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-managertools-sle15-pool-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/managertools-sle15-pool-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Pool</name>
-        <product>sle-manager-tools</product>
+        <product>Multi-Linux-ManagerTools-SLE</product>
       </listentry>
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-sle-manager-tools15-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-managertools-sle15-updates-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/sle-manager-tools15-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/managertools-sle15-updates-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SLE-15-Manager-Tools Updates</name>
-        <product>sle-manager-tools</product>
+        <product>Multi-Linux-ManagerTools-SLE</product>
       </listentry>
       <!-- Base system repos -->
       <listentry>
