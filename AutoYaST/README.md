@@ -1,29 +1,18 @@
-# AutoYaST profiles
+# SUSE Multi-Linux Manager and Uyuni AutoYaST Profiles
 
-This directory contains profiles for AutoYaST and can be used with SUSE Manager's autoinstallation feature.
+This directory contains example profiles for AutoYaST for both SUSE Multi-Linux Manager (formerly SUSE Manager) and the upstream Uyuni project.
 
-Each subdirectory contains a different AutoYaST profile with a description.
+**IMPORTANT: SELECT YOUR PRODUCT AND VERSION**
 
-Check which variables each script use before using it.
+Due to recent client channel re-branding and version updates, it is crucial that you use the profiles from the correct top-level directory.
 
-When the uploaded profile requires variables to be set, navigate to `Systems > Autoinstallation > Profiles`, select the profile to edit, and navigate to the `Variables` tab.
-Specify the required variables, using this format:
+Navigate to the directory that matches your server and version:
 
-```
-<key>=<value>
-```
+* ### **`Uyuni/`**
+    Profiles for **all versions of the upstream Uyuni project**. These profiles follow Uyuni's specific channel constraints and naming conventions.
 
-For all installations, the `$redhat_management_server` variable will be set automatically and does not need to be defined.
+* ### **`SUSE-Multi-Linux-Manager/`**
+    Profiles for **SUSE Multi-Linux Manager version 5.1 and any newer major release**. Use this directory if you are working with the **new, re-branded client tools channels**. These profiles can't be used with SUSE Manager 5.0 and older.
 
-These examples use the `$distrotree` variable, which must be defined as the distribution label used with this profile.
-Set the variable to the same value that you selected in `Autoinstall Tree` in the `Details` tab.
-
-Example:
-
-```
-distrotree=sles_sap15sp2-x86_64
-```
-
-when the distribution label is `sles_sap15sp2-x86_64`.
-
-To report a bug or request a change, please use [Bugzilla](https://bugzilla.suse.com) or open a GitHub issue.
+* ### **`SUSE-Manager-Legacy/`**
+    Legacy profiles for **SUSE Manager 5.0 and all older versions**. These profiles are compatible with the **legacy client tools channels** . They are compatible with SUSE Multi-Linux Manager 5.1 as well, but typically should not be needed.
