@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE profile>
-<!-- Profile base on dvosburg profiles for sles 15sp7 
+<!-- Profile base on dvosburg profiles for sles 15sp7
 SLES15 SP7 from scratch with salt bundle and all proxy packages
 It assumes system variables plus these entered on the variables tab:
 org='organization_id'
@@ -125,9 +125,9 @@ channel_prefix='clm_channel_prefix'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.1-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-multi-linux-manager-proxy-sle-5.1-pool-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.1-pool-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-multi-linux-manager-proxy-sle-5.1-pool-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '') SUSE-Manager-Proxy-5.1-Pool for $arch</name>
         <product>SUSE-Manager-Proxy</product>
@@ -135,9 +135,9 @@ channel_prefix='clm_channel_prefix'
       <listentry>
         <ask_on_error config:type="boolean">true</ask_on_error>
         #if $getVar('channel_prefix', '') != ""
-        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/$getVar('channel_prefix', '')-suse-multi-linux-manager-proxy-sle-5.1-updates-$arch-sp7/$distrotree</media_url>
         #else
-        <media_url>https://$redhat_management_server/ks/dist/child/suse-manager-proxy-5.1-updates-$arch-sp7/$distrotree</media_url>
+        <media_url>https://$redhat_management_server/ks/dist/child/suse-multi-linux-manager-proxy-sle-5.1-updates-$arch-sp7/$distrotree</media_url>
         #end if
         <name>$getVar('channel_prefix', '')  SUSE-Manager-Proxy-5.1-Updates for $arch</name>
         <product>SUSE-Manager-Proxy</product>

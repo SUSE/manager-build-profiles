@@ -1,6 +1,6 @@
-# SUSE Manager and Uyuni AutoYaST Profiles
+# SUSE Multi-Linux Manager and Uyuni AutoYaST Profiles
 
-This directory contains example profiles for AutoYaST for both SUSE Manager and the upstream Uyuni project.
+This directory contains example profiles for AutoYaST for both SUSE Multi-Linux Manager (formerly SUSE Manager) and the upstream Uyuni project.
 
 **IMPORTANT: SELECT YOUR PRODUCT AND VERSION**
 
